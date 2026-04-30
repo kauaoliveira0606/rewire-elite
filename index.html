@@ -85,15 +85,20 @@
     header {
       display: flex;
       justify-content: center;
+      align-items: center;
       padding: 16px 20px 8px;
+      width: 100%;
+      text-align: center;
     }
     .logo-wrap {
       position: relative;
-      display: inline-block;
-    }
-    .logo-wrap img {
+      display: block;
+      margin: 0 auto;
       width: 260px;
       max-width: 80%;
+    }
+    .logo-wrap img {
+      width: 100%;
       display: block;
       mix-blend-mode: screen;
     }
@@ -136,10 +141,13 @@
     }
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(1.45rem, 3.2vw, 2.5rem);
+      font-size: clamp(1.1rem, 3.2vw, 2.5rem);
       font-weight: 900;
       line-height: 1.35;
       letter-spacing: -0.01em;
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.15rem; }
     }
     .grad-silver, .grad-gold, .grad-blue {
       background: linear-gradient(180deg,
