@@ -141,20 +141,15 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    .grad-silver {
-      background: linear-gradient(180deg, #ffffff 0%, #c8d6e0 60%, #ffffff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .grad-gold {
-      background: linear-gradient(180deg, #ffe066 0%, #f5a623 50%, #ffe066 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .grad-blue {
-      background: linear-gradient(180deg, #90c8ff 0%, #3a8ee6 50%, #90c8ff 100%);
+    .grad-silver, .grad-gold, .grad-blue {
+      background: linear-gradient(180deg,
+        #ffffff 0%,
+        #e0e8f0 20%,
+        #ffffff 40%,
+        #c8d4dc 65%,
+        #ffffff 80%,
+        #eef2f5 100%
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -163,9 +158,9 @@
     .subheadline {
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(0.95rem, 2vw, 1.25rem);
-      font-weight: 500;
+      font-weight: 700;
       font-style: italic;
-      color: rgba(255,255,255,0.55);
+      color: #ffffff;
       margin-top: 14px;
       letter-spacing: 0.04em;
     }
@@ -178,7 +173,7 @@
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.45);
+      color: #ffffff;
       margin-bottom: 16px;
     }
 
@@ -245,7 +240,8 @@
       font-size: 0.78rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      color: #ffffff;
+      font-weight: 700;
       margin-bottom: 24px;
     }
     .trusted-bar {
@@ -322,7 +318,8 @@
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(0.65rem, 1.2vw, 0.78rem);
       font-weight: 500;
-      color: rgba(255,255,255,0.45);
+      color: #ffffff;
+      font-weight: 700;
       letter-spacing: 0.05em;
     }
     @media (max-width: 560px) {
@@ -369,7 +366,8 @@
       margin-top: 14px;
       font-size: 0.78rem;
       letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.4);
+      color: #ffffff;
+      font-weight: 700;
       text-transform: uppercase;
     }
 
@@ -380,7 +378,7 @@
       margin: 36px auto 0;
       padding: 0 20px 70px;
     }
-    .form-section [data-tf-live] { min-height: 700px; }
+    .form-section [data-tf-live] { min-height: 1000px; }
 
     /* Testimonials */
     .testimonials {
@@ -437,7 +435,33 @@
       display: inline-block;
       width: 100%;
       background: #0d1b2e;
-      border: 1px solid rgba(74,158,255,0.12);
+      border: none;
+      position: relative;
+      padding: 2px;
+    }
+    .t-card::before {
+      content: '';
+      position: absolute;
+      inset: -100%;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 120deg,
+        #1a3aff 165deg,
+        #5aabff 180deg,
+        #1a3aff 195deg,
+        transparent 240deg,
+        transparent 360deg
+      );
+      animation: border-chase 3.5s linear infinite;
+      z-index: 0;
+    }
+    .t-card-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #0d1b2e;
     }
     .t-card img {
       width: 100%;
@@ -604,20 +628,20 @@
       <h2 class="section-label">From Regular People → To Now Making Six Figures<br>Per Year With This Business</h2>
     </div>
     <div class="masonry">
-      <div class="t-card"><img src="t1.png"  alt="Sedessa – Job Landed"></div>
-      <div class="t-card"><img src="t2.png"  alt="Sedessa – iMessage"></div>
-      <div class="t-card"><img src="t3.png"  alt="Erica – $7,500 Role"></div>
-      <div class="t-card"><img src="t4.png"  alt="Alyssa Cohen – First Role"></div>
-      <div class="t-card"><img src="t5.png"  alt="Haley Mazanec – Badass Offer"></div>
-      <div class="t-card"><img src="t6.png"  alt="Jullian Miranda – Setter Role"></div>
-      <div class="t-card"><img src="t7.png"  alt="Alyssa Cohen – 1 Day of Setting"></div>
-      <div class="t-card"><img src="t8.png"  alt="Alyssa – #2 Leaderboard"></div>
-      <div class="t-card"><img src="t9.png"  alt="Alyssa – 150k Cash Collected"></div>
-      <div class="t-card"><img src="t10.png" alt="Andrew MacGregor – First Role"></div>
-      <div class="t-card"><img src="t11.png" alt="Ashley Kimsey – Offer Accepted"></div>
-      <div class="t-card"><img src="t12.png" alt="Andrew – 5k CC"></div>
-      <div class="t-card"><img src="t13.png" alt="Leah Pasache – Closer Role"></div>
-      <div class="t-card"><img src="t14.png" alt="Student Result"></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t1.png"  alt="Sedessa – Job Landed"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t2.png"  alt="Sedessa – iMessage"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t3.png"  alt="Erica – $7,500 Role"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t4.png"  alt="Alyssa Cohen – First Role"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t5.png"  alt="Haley Mazanec – Badass Offer"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t6.png"  alt="Jullian Miranda – Setter Role"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t7.png"  alt="Alyssa Cohen – 1 Day of Setting"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t8.png"  alt="Alyssa – #2 Leaderboard"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t9.png"  alt="Alyssa – 150k Cash Collected"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t10.png" alt="Andrew MacGregor – First Role"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t11.png" alt="Ashley Kimsey – Offer Accepted"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t12.png" alt="Andrew – 5k CC"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t13.png" alt="Leah Pasache – Closer Role"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t14.png" alt="Student Result"></div></div>
     </div>
   </section>
 
