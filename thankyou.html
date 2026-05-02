@@ -133,6 +133,149 @@
       margin-bottom: 28px;
     }
 
+    /* Mission Progress */
+    .mission-card {
+      background: linear-gradient(135deg, #07121f, #0c1d38);
+      border: 1px solid rgba(74,158,255,0.25);
+      border-radius: 16px;
+      padding: 24px 28px 20px;
+      max-width: 680px;
+      margin: 0 auto 10px;
+      text-align: left;
+    }
+    .mission-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .mission-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #4a9eff;
+    }
+    .mission-status {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #fff;
+      display: block;
+      margin-top: 4px;
+    }
+    .mission-header div { display: flex; flex-direction: column; }
+    .progress-bar-wrap { margin-bottom: 28px; }
+    .progress-bar-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #1a3aff, #4a9eff);
+      border-radius: 999px;
+      transition: width 1.5s ease;
+      box-shadow: 0 0 10px rgba(74,158,255,0.6);
+    }
+    .stages-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .stage-line {
+      position: absolute;
+      top: 26px;
+      height: 2px;
+      width: 28%;
+      z-index: 0;
+    }
+    .left-line { left: 17%; background: #00e676; }
+    .right-line { right: 17%; background: rgba(255,255,255,0.1); }
+    .completed-line { background: linear-gradient(90deg, #00e676, rgba(245,158,11,0.6)); }
+    .stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 1;
+      flex: 1;
+    }
+    .stage-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stage.done .stage-icon {
+      background: rgba(0,230,118,0.1);
+      border: 2px solid #00e676;
+      box-shadow: 0 0 16px rgba(0,230,118,0.3);
+    }
+    .stage.active .stage-icon {
+      background: rgba(245,158,11,0.1);
+      border: 2px solid #f59e0b;
+      box-shadow: 0 0 20px rgba(245,158,11,0.4);
+    }
+    .stage.locked .stage-icon {
+      background: rgba(255,255,255,0.04);
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+    @keyframes pulse-ring-anim {
+      0%   { box-shadow: 0 0 0 0 rgba(245,158,11,0.5), 0 0 20px rgba(245,158,11,0.4); }
+      70%  { box-shadow: 0 0 0 10px rgba(245,158,11,0), 0 0 20px rgba(245,158,11,0.4); }
+      100% { box-shadow: 0 0 0 0 rgba(245,158,11,0), 0 0 20px rgba(245,158,11,0.4); }
+    }
+    .pulse-ring { animation: pulse-ring-anim 1.8s ease-out infinite; }
+    .stage-num {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .stage.done .stage-num { color: #00e676; }
+    .stage.active .stage-num { color: #f59e0b; }
+    .stage.locked .stage-num { color: rgba(255,255,255,0.3); }
+    .stage-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .stage.done .stage-label { color: rgba(255,255,255,0.85); }
+    .stage.active .stage-label { color: rgba(255,255,255,0.85); }
+    .stage.locked .stage-label { color: rgba(255,255,255,0.3); }
+    .mission-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .mission-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f59e0b;
+      flex-shrink: 0;
+      animation: dot-pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes dot-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .mission-footer-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+    }
+
     /* Countdown */
     .countdown-wrap {
       display: flex;
@@ -312,11 +455,14 @@
     }
     .questions-section .q-sub {
       text-align: center;
-      font-size: clamp(0.95rem, 2vw, 1.1rem);
-      font-weight: 700;
-      color: #7dd8f8;
+      font-size: clamp(0.88rem, 1.8vw, 1rem);
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
       margin-bottom: 40px;
-      letter-spacing: 0.02em;
+      line-height: 1.7;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .q-item {
       margin-bottom: 40px;
@@ -443,6 +589,12 @@
     <p class="booked-label">Application Received</p>
     <h1>You Booked Your Call!</h1>
 
+    <!-- Attention Bar -->
+    <div class="attention-bar">
+      <span class="tag">⚡ Attention</span>
+      <p>You will receive a phone call from my team <span>within 5 minutes.</span><br>Keep your phone nearby right now.</p>
+    </div>
+
     <!-- Countdown Timer -->
     <div class="countdown-wrap">
       <div class="countdown-block">
@@ -456,11 +608,60 @@
       </div>
     </div>
 
-    <!-- Attention Bar -->
-    <div class="attention-bar">
-      <span class="tag">⚡ Attention</span>
-      <p>You will receive a phone call from my team <span>within 5 minutes.</span><br>Keep your phone nearby right now.</p>
+    <!-- Mission Progress -->
+    <div class="mission-card">
+      <div class="mission-header">
+        <div>
+          <span class="mission-title">APPLICATION STATUS</span>
+          <span class="mission-status">Mission Progress</span>
+        </div>
+      </div>
+
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="stages-wrap">
+        <!-- connector lines -->
+        <div class="stage-line left-line completed-line"></div>
+        <div class="stage-line right-line"></div>
+
+        <!-- Stage 1 -->
+        <div class="stage done">
+          <div class="stage-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="stage-num">STAGE 1</span>
+          <span class="stage-label">Application<br>Submitted</span>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="stage active">
+          <div class="stage-icon pulse-ring">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.7A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <span class="stage-num">STAGE 2</span>
+          <span class="stage-label">Awaiting<br>Your Call</span>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="stage locked">
+          <div class="stage-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <span class="stage-num">STAGE 3</span>
+          <span class="stage-label">Strategy Call<br>Scheduled</span>
+        </div>
+      </div>
+
+      <div class="mission-footer">
+        <span class="mission-dot"></span>
+        <span class="mission-footer-text">Coach is reviewing your application now</span>
+      </div>
     </div>
+
   </section>
 
   <!-- Next Steps Video -->
@@ -503,8 +704,9 @@
 
   <!-- Got Questions -->
   <section class="questions-section">
-    <h2>Got Questions?</h2>
-    <p class="q-sub">Watch these short videos before your call</p>
+    <p style="text-align:center; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.18em; color: #4a9eff; margin-bottom: 10px; text-transform: uppercase;">Watch Before Your Call</p>
+    <h2>Got Questions? Watch These First.</h2>
+    <p class="q-sub">The coach will skip the basics if you watch these — come prepared, you'll get way more out of the call and go straight into your plan.</p>
 
     <div class="q-item">
       <p class="q-title">What Is This Program?</p>
@@ -635,6 +837,15 @@
   </footer>
 
 </div>
+
+<!-- Progress Bar Animation -->
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('progressFill').style.width = '50%';
+    }, 400);
+  });
+</script>
 
 <!-- Countdown Timer Script -->
 <script>
