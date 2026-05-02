@@ -86,8 +86,32 @@
 
     .page { position: relative; z-index: 1; }
 
+    /* Sticky top bar */
+    .sticky-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: #1a47ff;
+      padding: 11px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 2px 20px rgba(26,71,255,0.5);
+    }
+    .sticky-bar-text {
+      font-size: clamp(0.78rem, 1.8vw, 0.92rem);
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+    }
+    .sticky-bar-text strong { font-weight: 900; }
+
     /* Header */
     header {
+      margin-top: 42px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -317,34 +341,52 @@
 
     /* Attention bar */
     .attention-bar {
-      background: linear-gradient(135deg, #07121f, #0a1d38);
-      border: 1px solid rgba(74,158,255,0.35);
-      border-radius: 12px;
+      background: linear-gradient(135deg, #060e1f, #0a1d3f);
+      border: 2px solid rgba(74,158,255,0.55);
+      border-radius: 16px;
       max-width: 720px;
-      margin: 0 auto 40px;
-      padding: 18px 28px;
+      margin: 0 auto 32px;
+      padding: 28px 32px;
       text-align: center;
+      box-shadow: 0 0 40px rgba(74,158,255,0.15), inset 0 0 40px rgba(74,158,255,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .attention-bar::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(74,158,255,0.15), transparent 50%, rgba(74,158,255,0.08));
+      pointer-events: none;
     }
     .attention-bar .tag {
       display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #4a9eff;
-      border: 1px solid rgba(74,158,255,0.4);
+      color: #fff;
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
       border-radius: 999px;
-      padding: 4px 14px;
-      margin-bottom: 10px;
+      padding: 6px 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 16px rgba(74,158,255,0.4);
     }
     .attention-bar p {
-      font-size: clamp(0.95rem, 2vw, 1.1rem);
-      font-weight: 700;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 900;
       color: #fff;
-      line-height: 1.5;
+      line-height: 1.55;
     }
     .attention-bar p span {
       color: #4a9eff;
+    }
+    .attention-bar .sub-note {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      margin-top: 10px;
     }
 
     /* Video section */
@@ -576,6 +618,12 @@
   <div class="meteor"></div>
 </div>
 
+<!-- Sticky Bar -->
+<div class="sticky-bar">
+  <span>📞</span>
+  <span class="sticky-bar-text"><strong>Your coach is reviewing your application right now</strong> — keep your phone nearby</span>
+</div>
+
 <div class="page">
 
   <header>
@@ -608,7 +656,20 @@
       </div>
     </div>
 
-    <!-- Mission Progress -->
+  </section>
+
+  <!-- Next Steps Video -->
+  <section class="video-section">
+    <p class="video-label">Watch this quick video for your important next steps</p>
+    <div class="video-border-wrap">
+      <div class="video-wrap">
+        <vturb-smartplayer id="vid-69e83ce4af7645fdd1e12b28" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Progress -->
+  <div style="padding: 0 20px 48px; max-width: 740px; margin: 0 auto;">
     <div class="mission-card">
       <div class="mission-header">
         <div>
@@ -624,11 +685,9 @@
       </div>
 
       <div class="stages-wrap">
-        <!-- connector lines -->
         <div class="stage-line left-line completed-line"></div>
         <div class="stage-line right-line"></div>
 
-        <!-- Stage 1 -->
         <div class="stage done">
           <div class="stage-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -637,7 +696,6 @@
           <span class="stage-label">Application<br>Submitted</span>
         </div>
 
-        <!-- Stage 2 -->
         <div class="stage active">
           <div class="stage-icon pulse-ring">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.7A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
@@ -646,7 +704,6 @@
           <span class="stage-label">Awaiting<br>Your Call</span>
         </div>
 
-        <!-- Stage 3 -->
         <div class="stage locked">
           <div class="stage-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -661,18 +718,7 @@
         <span class="mission-footer-text">Coach is reviewing your application now</span>
       </div>
     </div>
-
-  </section>
-
-  <!-- Next Steps Video -->
-  <section class="video-section">
-    <p class="video-label">Watch this quick video for your important next steps</p>
-    <div class="video-border-wrap">
-      <div class="video-wrap">
-        <vturb-smartplayer id="vid-69e83ce4af7645fdd1e12b28" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- What Happens Next -->
   <section class="next-section">
