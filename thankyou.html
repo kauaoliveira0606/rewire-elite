@@ -634,7 +634,7 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h1>You Booked Your Call!</h1>
+    <h1><span id="hero-name"></span>You Booked Your Call!</h1>
 
     <!-- Attention Bar -->
     <div class="attention-bar">
@@ -913,6 +913,19 @@
   </footer>
 
 </div>
+
+<!-- Name injection from URL -->
+<script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var name = params.get('name') || params.get('first_name') || '';
+    if (name) {
+      name = decodeURIComponent(name).trim();
+      name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+      document.getElementById('hero-name').textContent = name + ', ';
+    }
+  })();
+</script>
 
 <!-- Progress Bar Animation -->
 <script>
