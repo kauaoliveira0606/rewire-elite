@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources – Rewire Elite Performance</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Link Preview -->
+  <meta property="og:title" content="Resources – Rewire Elite Performance">
+  <meta property="og:description" content="Everything you need to know about us, how the program works, and how we can help you find success in High Ticket Sales.">
+  <meta property="og:image" content="https://rewire-elite.vercel.app/preview.png">
+  <meta property="og:url" content="https://rewire-elite.vercel.app/resources">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rewire-elite.vercel.app/preview.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, #000 0%, #040d18 45%, #000 100%);
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .ray {
+      position: absolute;
+      width: 1px;
+      border-radius: 9999px;
+      transform-origin: top center;
+      animation: ray-pulse ease-in-out infinite alternate;
+    }
+    @keyframes ray-pulse {
+      0%   { opacity: 0.06; }
+      100% { opacity: 0.18; }
+    }
+    .ray:nth-child(1) { height: 100vh; left: 28%; top: 0; background: linear-gradient(to bottom, rgba(30,10,200,0), rgba(40,20,220,0.6) 40%, rgba(60,30,255,0.9) 70%, rgba(30,10,180,0)); transform: rotate(8deg); animation-duration: 6s; width: 1.5px; }
+    .ray:nth-child(2) { height: 85vh; left: 31%; top: 5%; background: linear-gradient(to bottom, rgba(20,5,160,0), rgba(35,15,200,0.4) 50%, rgba(20,5,140,0)); transform: rotate(8.5deg); animation-duration: 8s; animation-delay: 1s; }
+    .ray:nth-child(3) { height: 90vh; left: 65%; top: 10%; background: linear-gradient(to bottom, rgba(20,5,170,0), rgba(50,20,240,0.55) 45%, rgba(80,40,255,0.8) 65%, rgba(20,5,150,0)); transform: rotate(11deg); animation-duration: 7s; animation-delay: 2s; width: 1.5px; }
+    .meteor {
+      position: absolute;
+      top: -120px;
+      width: 1.5px;
+      border-radius: 9999px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.9) 50%, rgba(255,255,255,0));
+      animation: meteor-fall linear infinite;
+    }
+    @keyframes meteor-fall {
+      0%   { transform: translateY(0) translateX(0) rotate(15deg); opacity: 0; }
+      5%   { opacity: 1; }
+      95%  { opacity: 0.5; }
+      100% { transform: translateY(110vh) translateX(90px) rotate(15deg); opacity: 0; }
+    }
+    .meteor:nth-child(4)  { left:  4%; height: 70px; animation-duration: 4.2s; animation-delay: 0s; }
+    .meteor:nth-child(5)  { left: 12%; height: 55px; animation-duration: 5.8s; animation-delay: 1.4s; }
+    .meteor:nth-child(6)  { left: 22%; height: 85px; animation-duration: 3.9s; animation-delay: 2.8s; }
+    .meteor:nth-child(7)  { left: 38%; height: 60px; animation-duration: 5.1s; animation-delay: 0.7s; }
+    .meteor:nth-child(8)  { left: 50%; height: 90px; animation-duration: 4.6s; animation-delay: 3.3s; }
+    .meteor:nth-child(9)  { left: 63%; height: 65px; animation-duration: 6.2s; animation-delay: 1.1s; }
+    .meteor:nth-child(10) { left: 74%; height: 75px; animation-duration: 4.4s; animation-delay: 2.0s; }
+    .meteor:nth-child(11) { left: 83%; height: 50px; animation-duration: 5.5s; animation-delay: 0.4s; }
+    .meteor:nth-child(12) { left: 91%; height: 80px; animation-duration: 3.7s; animation-delay: 1.8s; }
+
+    .page { position: relative; z-index: 1; }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 20px 10px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo-wrap {
+      display: block;
+      margin: 0 auto;
+      width: 220px;
+      max-width: 75%;
+    }
+    .logo-wrap img {
+      width: 100%;
+      display: block;
+      mix-blend-mode: screen;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 20px 24px 40px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.25;
+      background: linear-gradient(180deg, #ffffff 0%, #e0e8f0 30%, #ffffff 60%, #c8d4dc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* Section wrapper */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    /* Section label */
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: #4a9eff;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: clamp(0.88rem, 1.8vw, 1rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      margin-bottom: 36px;
+      line-height: 1.6;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Got Questions accordion */
+    .q-item {
+      margin-bottom: 40px;
+    }
+    .q-title {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .q-video {
+      position: relative;
+      border-radius: 10px;
+      padding: 2px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #07121f, #0d2240);
+    }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(74,158,255,0.3), transparent);
+      margin-bottom: 60px;
+    }
+
+    /* Resource card */
+    .resource-card {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.25);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+    .resource-num {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7dd8f8;
+      margin-bottom: 8px;
+    }
+    .resource-title {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .resource-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .resource-link {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 12px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 20px rgba(74,158,255,0.3);
+      transition: opacity 0.2s;
+    }
+    .resource-link:hover { opacity: 0.85; }
+
+    /* YouTube videos */
+    .yt-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 12px;
+    }
+    .yt-item {}
+    .yt-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .yt-wrap {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid rgba(74,158,255,0.35);
+      box-shadow: 0 0 24px rgba(30,80,255,0.15);
+      cursor: pointer;
+    }
+    .yt-thumb {
+      position: relative;
+      padding-bottom: 56.25%;
+      background: #000;
+    }
+    .yt-thumb img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s;
+    }
+    .yt-wrap:hover .yt-thumb img { opacity: 0.85; }
+    .yt-play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; height: 64px;
+      background: #ff0000;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+      z-index: 2;
+    }
+    .yt-wrap:hover .yt-play { transform: translate(-50%, -50%) scale(1.08); }
+    .yt-play svg { margin-left: 4px; }
+    .yt-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+    .t-grid {
+      columns: 3 280px;
+      column-gap: 14px;
+    }
+    .t-card {
+      position: relative;
+      padding: 2px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      break-inside: avoid;
+    }
+    .t-card::before {
+      content: '';
+      position: absolute;
+      inset: -100%;
+      background: conic-gradient(from 0deg, transparent 0deg, transparent 120deg, #1a3aff 165deg, #5aabff 180deg, #1a3aff 195deg, transparent 240deg, transparent 360deg);
+      animation: border-chase 3.5s linear infinite;
+      z-index: 0;
+    }
+    @keyframes border-chase { to { transform: rotate(360deg); } }
+    .t-card-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: 9px;
+      overflow: hidden;
+      background: #05101e;
+    }
+    .t-card-inner img { width: 100%; display: block; }
+
+    /* Footer */
+    footer {
+      background: #000;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 20px;
+      text-align: center;
+    }
+    footer img { width: 140px; opacity: 0.5; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; mix-blend-mode: screen; }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .footer-disc {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.65;
+      text-align: center;
+    }
+    .footer-disc strong {
+      display: block;
+      color: rgba(255,255,255,0.6);
+      margin: 10px 0 4px;
+    }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<div class="bg">
+  <div class="ray"></div>
+  <div class="ray"></div>
+  <div class="ray"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+</div>
+
+<div class="page">
+
+  <header>
+    <a class="logo-wrap" href="index.html">
+      <img src="logo.png" alt="Rewire Elite Performance">
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Everything you need to know about us will be here.</h1>
+    <p>This page is dedicated to give you as much information possible about us, how the program works, and how we can help find success in High Ticket Sales by working 1:1</p>
+  </section>
+
+  <!-- Got Questions -->
+  <section class="section">
+    <h2 class="section-title">Resource #1: FAQ Videos</h2>
+    <p class="section-sub">Watch these before your call so we can skip the basics and get straight to your plan.</p>
+
+    <div class="q-item">
+      <p class="q-title">What Is This Program?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97e2c0499600c50c9d83" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What Is High Ticket Sales?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97d1634564adcf50b6db" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">Is High Ticket Sales Saturated?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69e83d87af7645fdd1e12c44" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What Are We Selling?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97a6c0499600c50c9cc2" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What If I Don't Have Any Sales Experience?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97b0e1dcfbd062a1d05b" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What Makes This Program Different?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97e8715b20730f89ea31" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">How Do You Prevent Failure In Your Program?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69e83df80b351269d46f14de" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">How Do You Guarantee Placement?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97abefb9293f97517167" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What Are Realistic Results?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb979f8151708c5bc6a014" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">How Much Time Do I Need For This?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97b4e47d7b09a8de1c95" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What Is The Failure Rate?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97be634564adcf50b69f" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">Why Do You Sell A Program?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-69eb97c679a9b357d90c8406" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Resource #1 -->
+  <section class="section">
+    <div class="resource-card">
+      <p class="resource-title">Resource #2: Free High Ticket Sales Training</p>
+      <p class="resource-desc">Click below to access our Free High Ticket Sales Training, this is a private look inside our training, frameworks, and coaching process. This is less than 5% of what we have inside.</p>
+      <a class="resource-link" href="https://gamma.app/docs/Free-High-Ticket-Sales-Training-0lrs9yy1aaxwrb8?mode=doc" target="_blank">Free High Ticket Sales Training</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Resource #2 -->
+  <section class="section">
+    <div class="resource-card">
+      <p class="resource-title">Resource #3: YouTube Videos</p>
+      <div class="yt-grid">
+
+        <div class="yt-item">
+          <p class="yt-label"><a href="https://www.youtube.com/watch?v=ljGRDNqK-lU&t=1755s" target="_blank" style="color:#7dd8f8; text-decoration:none;">$10M High Ticket Closer Gives Away 1 Hour Sales Masterclass For Free</a></p>
+          <div class="yt-wrap" data-vid="ljGRDNqK-lU" data-start="1755">
+            <div class="yt-thumb">
+              <img src="https://img.youtube.com/vi/ljGRDNqK-lU/maxresdefault.jpg" alt="YouTube Video">
+              <div class="yt-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-item">
+          <p class="yt-label"><a href="https://www.youtube.com/watch?v=8vq2VnCHI_M&t=200s" target="_blank" style="color:#7dd8f8; text-decoration:none;">How I'd Personally Coach You to $20K+/Month in High Ticket Sales</a></p>
+          <div class="yt-wrap" data-vid="8vq2VnCHI_M" data-start="200">
+            <div class="yt-thumb">
+              <img src="https://img.youtube.com/vi/8vq2VnCHI_M/maxresdefault.jpg" alt="YouTube Video">
+              <div class="yt-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-item">
+          <p class="yt-label"><a href="https://www.youtube.com/watch?v=fCIHyvJGBko" target="_blank" style="color:#7dd8f8; text-decoration:none;">1:1 Coaching Like This Gets You to 6 Figures in High Ticket Sales</a></p>
+          <div class="yt-wrap" data-vid="fCIHyvJGBko" data-start="">
+            <div class="yt-thumb">
+              <img src="https://img.youtube.com/vi/fCIHyvJGBko/maxresdefault.jpg" alt="YouTube Video">
+              <div class="yt-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-item">
+          <p class="yt-label"><a href="https://www.youtube.com/watch?v=PUvJKy_DosA&t=904s" target="_blank" style="color:#7dd8f8; text-decoration:none;">How to Land Your First $10K+/mo High Ticket Sales Role (Live Coaching Call)</a></p>
+          <div class="yt-wrap" data-vid="PUvJKy_DosA" data-start="904">
+            <div class="yt-thumb">
+              <img src="https://img.youtube.com/vi/PUvJKy_DosA/maxresdefault.jpg" alt="YouTube Video">
+              <div class="yt-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Resource #3 Testimonials -->
+  <section class="testimonials">
+    <h2 class="section-title" style="margin-bottom:32px;">Resource #4: Testimonies</h2>
+    <div class="t-grid">
+      <div class="t-card"><div class="t-card-inner"><img src="t2.png"  alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t3.png"  alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t4.png"  alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t5.png"  alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t6.png"  alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t7.png"  alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t8.png"  alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t9.png"  alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t10.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t11.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t12.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t13.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t14.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t15.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t16.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t17.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t18.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t19.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t20.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t21.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t22.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t23.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t24.png" alt="Student Result"></div></div>
+      <div class="t-card"><div class="t-card-inner"><img src="t25.png" alt="Student Result"></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="logo.png" alt="Rewire Elite Performance">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="terms.html" target="_blank">Terms</a>
+      <a href="privacy.html" target="_blank">Privacy Policy</a>
+    </div>
+    <div class="footer-disc">
+      <strong>Meta Compliance & Earnings Disclaimer</strong>
+      This website is not endorsed by, affiliated with, or associated with Meta Platforms, Inc. (formerly Facebook, Inc.). Facebook is a trademark of Meta Platforms, Inc.
+      <strong>Earnings Disclaimer</strong>
+      IMPORTANT: Results are not typical. We do not guarantee any specific income, sales, or financial results. Your results depend on effort, experience, market conditions, and individual circumstances. Past performance does not guarantee future results. Testimonials represent individual experiences and are not typical.
+      <br><br>© 2025 Rewire Elite Performance. All Rights Reserved.
+    </div>
+  </footer>
+
+</div>
+
+<!-- YouTube click-to-play -->
+<script>
+  document.querySelectorAll('.yt-wrap[data-vid]').forEach(function(wrap) {
+    wrap.addEventListener('click', function() {
+      var vid = wrap.dataset.vid;
+      var start = wrap.dataset.start;
+      var src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&modestbranding=1&rel=0' + (start ? '&start=' + start : '');
+      var iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.allowFullscreen = true;
+      iframe.allow = 'autoplay; encrypted-media';
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;';
+      wrap.querySelector('.yt-thumb').style.display = 'none';
+      wrap.style.paddingBottom = '56.25%';
+      wrap.style.position = 'relative';
+      wrap.appendChild(iframe);
+    });
+  });
+</script>
+
+<!-- Vturb Players -->
+<script type="text/javascript">
+  var players = [
+    "69eb97e2c0499600c50c9d83",
+    "69eb97d1634564adcf50b6db",
+    "69e83d87af7645fdd1e12c44",
+    "69eb97a6c0499600c50c9cc2",
+    "69eb97b0e1dcfbd062a1d05b",
+    "69eb97e8715b20730f89ea31",
+    "69e83df80b351269d46f14de",
+    "69eb97abefb9293f97517167",
+    "69eb979f8151708c5bc6a014",
+    "69eb97b4e47d7b09a8de1c95",
+    "69eb97be634564adcf50b69f",
+    "69eb97c679a9b357d90c8406"
+  ];
+  players.forEach(function(id) {
+    var s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/8d027798-f897-4edf-8711-0177c4b0c53f/players/" + id + "/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+  });
+</script>
+
+</body>
+</html>
