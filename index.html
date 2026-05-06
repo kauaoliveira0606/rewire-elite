@@ -176,15 +176,17 @@
       line-height: 1.35;
       letter-spacing: -0.01em;
     }
-    .grad-silver, .grad-gold, .grad-blue {
-      background: linear-gradient(180deg,
-        #ffffff 0%,
-        #e0e8f0 20%,
-        #ffffff 40%,
-        #c8d4dc 65%,
-        #ffffff 80%,
-        #eef2f5 100%
-      );
+    .grad-silver {
+      color: #ffffff;
+    }
+    .grad-gold {
+      background: linear-gradient(135deg, #F5C842 0%, #E8A020 50%, #F5C842 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .grad-blue {
+      background: linear-gradient(135deg, #60AAFF 0%, #4A9EFF 50%, #60AAFF 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
