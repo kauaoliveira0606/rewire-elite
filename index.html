@@ -24,7 +24,7 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1554159749234800');
+  (function(){var p=new URLSearchParams(window.location.search),m={};var em=p.get('em')||p.get('email');var ph=p.get('ph')||p.get('phone');var fn=p.get('fn')||p.get('first_name');var ln=p.get('ln')||p.get('last_name');if(em)m.em=em;if(ph)m.ph=ph;if(fn)m.fn=fn;if(ln)m.ln=ln;fbq('init','1554159749234800',m);})();
   fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
