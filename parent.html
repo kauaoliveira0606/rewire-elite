@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Parents – Rewire Elite Performance</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  (function(){var p=new URLSearchParams(window.location.search),m={};var em=p.get('em')||p.get('email');var ph=p.get('ph')||p.get('phone');var fn=p.get('fn')||p.get('first_name');var ln=p.get('ln')||p.get('last_name');if(em)m.em=em;if(ph)m.ph=ph;if(fn)m.fn=fn;if(ln)m.ln=ln;fbq('init','1554159749234800',m);})();
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1554159749234800&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, #000 0%, #040d18 45%, #000 100%);
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .ray {
+      position: absolute;
+      width: 1px;
+      border-radius: 9999px;
+      transform-origin: top center;
+      animation: ray-pulse ease-in-out infinite alternate;
+    }
+    @keyframes ray-pulse {
+      0%   { opacity: 0.06; }
+      100% { opacity: 0.18; }
+    }
+    .ray:nth-child(1) { height: 100vh; left: 28%; top: 0; background: linear-gradient(to bottom, rgba(30,10,200,0), rgba(40,20,220,0.6) 40%, rgba(60,30,255,0.9) 70%, rgba(30,10,180,0)); transform: rotate(8deg); animation-duration: 6s; width: 1.5px; }
+    .ray:nth-child(2) { height: 85vh; left: 31%; top: 5%; background: linear-gradient(to bottom, rgba(20,5,160,0), rgba(35,15,200,0.4) 50%, rgba(20,5,140,0)); transform: rotate(8.5deg); animation-duration: 8s; animation-delay: 1s; }
+    .ray:nth-child(3) { height: 90vh; left: 65%; top: 10%; background: linear-gradient(to bottom, rgba(20,5,170,0), rgba(50,20,240,0.55) 45%, rgba(80,40,255,0.8) 65%, rgba(20,5,150,0)); transform: rotate(11deg); animation-duration: 7s; animation-delay: 2s; width: 1.5px; }
+    .meteor {
+      position: absolute;
+      top: -120px;
+      width: 1.5px;
+      border-radius: 9999px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.9) 50%, rgba(255,255,255,0));
+      animation: meteor-fall linear infinite;
+    }
+    @keyframes meteor-fall {
+      0%   { transform: translateY(0) translateX(0) rotate(15deg); opacity: 0; }
+      5%   { opacity: 1; }
+      95%  { opacity: 0.5; }
+      100% { transform: translateY(110vh) translateX(90px) rotate(15deg); opacity: 0; }
+    }
+    .meteor:nth-child(4) { left:  8%; height: 70px; animation-duration: 4.2s; animation-delay: 0s; }
+    .meteor:nth-child(5) { left: 25%; height: 55px; animation-duration: 5.8s; animation-delay: 1.4s; }
+    .meteor:nth-child(6) { left: 55%; height: 85px; animation-duration: 3.9s; animation-delay: 2.8s; }
+    .meteor:nth-child(7) { left: 80%; height: 60px; animation-duration: 5.1s; animation-delay: 0.7s; }
+
+    .page { position: relative; z-index: 1; }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 20px 12px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo-wrap {
+      display: block;
+      margin: 0 auto;
+      width: 180px;
+      max-width: 75%;
+    }
+    .logo-wrap img {
+      width: 100%;
+      display: block;
+      mix-blend-mode: screen;
+    }
+
+    .rule {
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(74,158,255,0.5), transparent);
+      margin: 0 auto 8px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 36px 24px 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #4a9eff;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.2;
+      background: linear-gradient(180deg, #ffffff 0%, #e0e8f0 30%, #ffffff 60%, #c8d4dc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    /* Section */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: #4a9eff;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: clamp(0.85rem, 1.8vw, 1rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    /* Video */
+    .video-card {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+    .video-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #040d18;
+    }
+
+    /* CTA Button */
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a56ff 0%, #0e3acc 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      box-shadow: 0 0 30px rgba(26,86,255,0.4);
+      transition: box-shadow 0.2s;
+    }
+    .cta-btn:hover { box-shadow: 0 0 50px rgba(26,86,255,0.7); }
+
+    /* Skills cards */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .skill-card {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 14px;
+      padding: 24px 22px;
+    }
+    .skill-icon {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .skill-title {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .skill-desc {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* Checklist */
+    .checklist {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 16px;
+      padding: 28px 32px;
+      list-style: none;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '✓';
+      color: #4a9eff;
+      font-weight: 900;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: left;
+      padding: 18px 22px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-q:hover { color: #7dd8f8; }
+    .faq-arrow {
+      font-size: 0.75rem;
+      color: #4a9eff;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 22px 18px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(74,158,255,0.3), transparent);
+      margin-bottom: 60px;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    @media (max-width: 600px) {
+      .video-card { padding: 20px 16px; }
+      .checklist { padding: 20px 18px; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg">
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+  </div>
+
+  <div class="page">
+
+    <header>
+      <div class="logo-wrap">
+        <img src="logo.png" alt="Rewire Elite Performance">
+      </div>
+    </header>
+
+    <div class="rule"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-eyebrow">For Parents &amp; Guardians</p>
+      <h1>Your kid wants to build a business.<br>Here's what the program actually teaches.</h1>
+      <p class="hero-sub">Before any decision is made, we want to talk to you. Watch the video below — it covers what Rewire Elite is, what your kid would be learning, and what the strategy call is actually about.</p>
+    </section>
+
+    <!-- Parent Video -->
+    <section class="section">
+      <p class="section-eyebrow">Watch First</p>
+      <h2 class="section-title">This video was made specifically for parents</h2>
+      <p class="section-sub">Watch it before the call.</p>
+
+      <div class="video-card">
+        <div class="video-wrap">
+          <!-- REPLACE: parent video -->
+          <vturb-smartplayer id="vid-PLACEHOLDER_PARENT" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="/resources" class="cta-btn">Go to Pre-Call Prep →</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- What They Learn -->
+    <section class="section">
+      <p class="section-eyebrow">The Curriculum</p>
+      <h2 class="section-title">What your kid actually learns</h2>
+      <p class="section-sub">No theory. No busywork. Real skills they can use to generate income.</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">📞</div>
+          <p class="skill-title">High-Ticket Sales</p>
+          <p class="skill-desc">How to close premium offers for coaches, consultants, and online businesses using proven sales frameworks — the same skills top closers use to earn six figures remotely.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎯</div>
+          <p class="skill-title">Lead Setting</p>
+          <p class="skill-desc">How to qualify prospects, book calls, and move leads through a pipeline professionally — without cold calling or pushy tactics.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">💻</div>
+          <p class="skill-title">Remote Income</p>
+          <p class="skill-desc">How to work from anywhere, build a flexible income stream, and operate independently — skills that translate across industries for life.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- What Parents Should Know -->
+    <section class="section">
+      <p class="section-eyebrow">Transparency</p>
+      <h2 class="section-title">What you should know as a parent</h2>
+      <p class="section-sub" style="margin-bottom: 28px;"></p>
+
+      <ul class="checklist">
+        <li>The strategy call requires a parent or guardian present — we won't proceed without you</li>
+        <li>No income is guaranteed. This is a real business skill set, not a get-rich-quick scheme</li>
+        <li>The program is self-paced and designed to work around school schedules</li>
+        <li>We've had students as young as 15 successfully land clients — with parental support</li>
+        <li>You'll have full visibility into what your kid is learning and doing at every stage</li>
+        <li>Pricing is discussed openly on the call — nothing is hidden or pressured</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Next Step -->
+    <section class="section" style="text-align: center;">
+      <p class="section-eyebrow">Next Step</p>
+      <h2 class="section-title">Prepare for the strategy call</h2>
+      <p class="section-sub">The pre-call page has videos that explain exactly what to expect. Watch them together with your kid before the call — it makes the conversation much more productive.</p>
+      <a href="/resources" class="cta-btn">Go to Pre-Call Prep →</a>
+      <p style="margin-top: 16px; font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 600;">Watch these with your kid before the call.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FAQ -->
+    <section class="section">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">Questions parents ask</h2>
+      <p class="section-sub" style="margin-bottom: 32px;"></p>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">My kid is under 18. Can they still join? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">Yes — we work with students as young as 15. However, a parent or guardian must be present on the strategy call and involved in the enrollment decision. We take that seriously.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What exactly will my kid be learning? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">They'll learn high-ticket sales — how to close premium offers for online businesses, how to set appointments, and how to generate remote income using real, transferable skills. Everything is taught step by step with 1-on-1 coaching.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is this safe? Is it legitimate? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">Absolutely. High-ticket sales is one of the most in-demand remote skills in the world. This is not a pyramid scheme or MLM — it's a legitimate, teachable skill set that companies pay for every day. We have real students with real results to back it up.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How much time does this take? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">The program is self-paced and flexible. Most students spend 1–2 hours per day while keeping up with school. The goal is to build something sustainable, not overwhelm them.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What's the call actually about? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">It's a strategy session to understand your kid's situation and see if the program is the right fit. We'll walk through everything — what they'd learn, what's expected, and what the investment looks like. Nothing is hidden and there's no pressure.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will you talk to my child about money or finances? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">Yes — openly and honestly, with you in the room. We believe parents should be fully informed about any financial commitment. That's why we require a parent on the call before any decision is made.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      This site is not a part of the Facebook™ or Meta™ website or Meta™ Inc. Additionally, this site is NOT endorsed by Facebook™ or Meta™ in any way. Results are not typical. Your results will vary based on effort, experience, and market conditions.
+    </div>
+
+    <footer>
+      © 2025 Rewire Elite Performance — All rights reserved
+    </footer>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
