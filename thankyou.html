@@ -634,7 +634,7 @@
 <!-- Sticky Bar -->
 <div class="sticky-bar">
   <span>📞</span>
-  <span class="sticky-bar-text"><strong>Your coach is reviewing your application right now</strong> — keep your phone nearby</span>
+  <span class="sticky-bar-text"><strong><span id="sticky-name"></span>your coach is reviewing your application right now</strong> — keep your phone nearby</span>
 </div>
 
 <div class="page">
@@ -889,6 +889,8 @@
       name = decodeURIComponent(name).trim();
       name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
       document.getElementById('hero-name').textContent = name + ', ';
+      var stickyName = document.getElementById('sticky-name');
+      if (stickyName) stickyName.textContent = name + ', ';
     }
   })();
 </script>
