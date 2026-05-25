@@ -222,26 +222,41 @@
       margin-bottom: 60px;
     }
 
-    /* Wins grid */
-    .wins-grid {
-      columns: 2;
+    /* Testimonials */
+    .testimonials {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+    .t-grid {
+      columns: 3 280px;
       column-gap: 14px;
     }
-    .win-card {
-      break-inside: avoid;
-      margin-bottom: 14px;
-      border-radius: 12px;
+    .t-card {
+      position: relative;
+      padding: 2px;
       overflow: hidden;
-      display: inline-block;
-      width: 100%;
-      background: #0d1b2e;
-      border: 1px solid rgba(74,158,255,0.15);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      break-inside: avoid;
     }
-    .win-card img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .t-card::before {
+      content: '';
+      position: absolute;
+      inset: -100%;
+      background: conic-gradient(from 0deg, transparent 0deg, transparent 120deg, #1a3aff 165deg, #5aabff 180deg, #1a3aff 195deg, transparent 240deg, transparent 360deg);
+      animation: border-chase 3.5s linear infinite;
+      z-index: 0;
     }
+    @keyframes border-chase { to { transform: rotate(360deg); } }
+    .t-card-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: 9px;
+      overflow: hidden;
+      background: #05101e;
+    }
+    .t-card-inner img { width: 100%; display: block; }
 
     /* Disclaimer */
     .disclaimer {
@@ -366,25 +381,33 @@
 
     <div class="divider"></div>
 
-    <!-- Wins / Testimonials -->
-    <section class="section">
-      <p class="section-eyebrow">Student Wins</p>
-      <h2 class="section-title">Some More Wins...</h2>
-      <p class="section-sub" style="margin-bottom: 40px;">People just like you who followed the system</p>
-
-      <div class="wins-grid">
-        <div class="win-card"><img src="t2.png"  alt="Student Result"></div>
-        <div class="win-card"><img src="t3.png"  alt="Student Result"></div>
-        <div class="win-card"><img src="t4.png"  alt="Student Result"></div>
-        <div class="win-card"><img src="t5.png"  alt="Student Result"></div>
-        <div class="win-card"><img src="t6.png"  alt="Student Result"></div>
-        <div class="win-card"><img src="t7.png"  alt="Student Result"></div>
-        <div class="win-card"><img src="t8.png"  alt="Student Result"></div>
-        <div class="win-card"><img src="t9.png"  alt="Student Result"></div>
-        <div class="win-card"><img src="t10.png" alt="Student Result"></div>
-        <div class="win-card"><img src="t11.png" alt="Student Result"></div>
-        <div class="win-card"><img src="t12.png" alt="Student Result"></div>
-        <div class="win-card"><img src="t13.png" alt="Student Result"></div>
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="t-grid">
+        <div class="t-card"><div class="t-card-inner"><img src="t2.png"  alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t3.png"  alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t4.png"  alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t5.png"  alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t6.png"  alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t7.png"  alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t8.png"  alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t9.png"  alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t10.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t11.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t12.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t13.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t14.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t15.jpg" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t16.jpg" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t17.jpg" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t18.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t19.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t20.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t21.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t22.png" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t23.jpg" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t24.jpg" alt="Student Result"></div></div>
+        <div class="t-card"><div class="t-card-inner"><img src="t25.jpg" alt="Student Result"></div></div>
       </div>
     </section>
 
