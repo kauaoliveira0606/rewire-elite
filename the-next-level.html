@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Next Level – Rewire Elite Performance</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  (function(){var p=new URLSearchParams(window.location.search),m={};var em=p.get('em')||p.get('email');var ph=p.get('ph')||p.get('phone');var fn=p.get('fn')||p.get('first_name');var ln=p.get('ln')||p.get('last_name');if(em)m.em=em;if(ph)m.ph=ph;if(fn)m.fn=fn;if(ln)m.ln=ln;fbq('init','1554159749234800',m);})();
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1554159749234800&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, #000 0%, #040d18 45%, #000 100%);
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .ray {
+      position: absolute;
+      width: 1px;
+      border-radius: 9999px;
+      transform-origin: top center;
+      animation: ray-pulse ease-in-out infinite alternate;
+    }
+    @keyframes ray-pulse {
+      0%   { opacity: 0.06; }
+      100% { opacity: 0.18; }
+    }
+    .ray:nth-child(1) { height: 100vh; left: 28%; top: 0; background: linear-gradient(to bottom, rgba(30,10,200,0), rgba(40,20,220,0.6) 40%, rgba(60,30,255,0.9) 70%, rgba(30,10,180,0)); transform: rotate(8deg); animation-duration: 6s; width: 1.5px; }
+    .ray:nth-child(2) { height: 85vh; left: 31%; top: 5%; background: linear-gradient(to bottom, rgba(20,5,160,0), rgba(35,15,200,0.4) 50%, rgba(20,5,140,0)); transform: rotate(8.5deg); animation-duration: 8s; animation-delay: 1s; }
+    .ray:nth-child(3) { height: 90vh; left: 65%; top: 10%; background: linear-gradient(to bottom, rgba(20,5,170,0), rgba(50,20,240,0.55) 45%, rgba(80,40,255,0.8) 65%, rgba(20,5,150,0)); transform: rotate(11deg); animation-duration: 7s; animation-delay: 2s; width: 1.5px; }
+    .meteor {
+      position: absolute;
+      top: -120px;
+      width: 1.5px;
+      border-radius: 9999px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.9) 50%, rgba(255,255,255,0));
+      animation: meteor-fall linear infinite;
+    }
+    @keyframes meteor-fall {
+      0%   { transform: translateY(0) translateX(0) rotate(15deg); opacity: 0; }
+      5%   { opacity: 1; }
+      95%  { opacity: 0.5; }
+      100% { transform: translateY(110vh) translateX(90px) rotate(15deg); opacity: 0; }
+    }
+    .meteor:nth-child(4) { left:  8%; height: 70px; animation-duration: 4.2s; animation-delay: 0s; }
+    .meteor:nth-child(5) { left: 25%; height: 55px; animation-duration: 5.8s; animation-delay: 1.4s; }
+    .meteor:nth-child(6) { left: 55%; height: 85px; animation-duration: 3.9s; animation-delay: 2.8s; }
+    .meteor:nth-child(7) { left: 80%; height: 60px; animation-duration: 5.1s; animation-delay: 0.7s; }
+
+    .page { position: relative; z-index: 1; }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 20px 12px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo-wrap {
+      display: block;
+      margin: 0 auto;
+      width: 180px;
+      max-width: 75%;
+    }
+    .logo-wrap img {
+      width: 100%;
+      display: block;
+      mix-blend-mode: screen;
+    }
+
+    .rule {
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(74,158,255,0.5), transparent);
+      margin: 0 auto 8px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 36px 24px 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #4a9eff;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.2;
+      background: linear-gradient(180deg, #ffffff 0%, #e0e8f0 30%, #ffffff 60%, #c8d4dc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+    }
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      max-width: 700px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    /* Section */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: #4a9eff;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: clamp(0.85rem, 1.8vw, 1rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    /* Video */
+    .video-card {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+    .video-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #040d18;
+    }
+
+    /* CTA Button */
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a56ff 0%, #0e3acc 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      box-shadow: 0 0 30px rgba(26,86,255,0.4);
+      transition: box-shadow 0.2s;
+    }
+    .cta-btn:hover { box-shadow: 0 0 50px rgba(26,86,255,0.7); }
+
+    /* Feature cards */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .feature-card {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 14px;
+      padding: 24px 22px;
+    }
+    .feature-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7dd8f8;
+      background: rgba(125,216,248,0.1);
+      border: 1px solid rgba(125,216,248,0.25);
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-bottom: 12px;
+    }
+    .feature-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .feature-desc {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* Checklist */
+    .checklist {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 16px;
+      padding: 28px 32px;
+      list-style: none;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '✓';
+      color: #4a9eff;
+      font-weight: 900;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: linear-gradient(135deg, #07121f, #0d2240);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: left;
+      padding: 18px 22px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-q:hover { color: #7dd8f8; }
+    .faq-arrow {
+      font-size: 0.75rem;
+      color: #4a9eff;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 22px 18px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(74,158,255,0.3), transparent);
+      margin-bottom: 60px;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    @media (max-width: 600px) {
+      .video-card { padding: 20px 16px; }
+      .checklist { padding: 20px 18px; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg">
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+  </div>
+
+  <div class="page">
+
+    <header>
+      <div class="logo-wrap">
+        <img src="logo.png" alt="Rewire Elite Performance">
+      </div>
+    </header>
+
+    <div class="rule"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-eyebrow">For Experienced Closers &amp; Setters</p>
+      <h1>You already know how to sell. Here's what the next level actually looks like.</h1>
+      <p class="hero-sub">This isn't a program for people learning what a close is. This is for people who are already in the game — and want to build something that scales without hitting a ceiling.</p>
+    </section>
+
+    <!-- Video -->
+    <section class="section">
+      <p class="section-eyebrow">Watch First</p>
+      <h2 class="section-title">Watch the full breakdown</h2>
+      <p class="section-sub">Including how we take experienced reps to the next income tier.</p>
+
+      <div class="video-card">
+        <div class="video-wrap">
+          <!-- REPLACE: next level video -->
+          <vturb-smartplayer id="vid-PLACEHOLDER_NEXTLEVEL" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="/resources" target="_blank" class="cta-btn">Prepare for Your Gameplan Call →</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- What's Inside -->
+    <section class="section">
+      <p class="section-eyebrow">Inside The Program</p>
+      <h2 class="section-title">What's actually inside — for experienced reps</h2>
+      <p class="section-sub">The program covers the foundations, but it also covers what high-level closers and setters actually care about.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-tag">Advanced</span>
+          <p class="feature-title">Elite Closing Frameworks</p>
+          <p class="feature-desc">Advanced objection handling, tonality control, and close sequencing that separates top 1% closers from the rest — not the basics you've already heard.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-tag">Advanced</span>
+          <p class="feature-title">High-Ticket Placement</p>
+          <p class="feature-desc">Direct access to premium offers paying top commissions. We place experienced reps with vetted companies where the upside is real and the product converts.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-tag">Advanced</span>
+          <p class="feature-title">Income Scaling Systems</p>
+          <p class="feature-desc">The exact workflows used to consistently hit $20k–$30k months — pipeline structure, follow-up systems, and performance tracking that removes guesswork.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Who This Is For -->
+    <section class="section">
+      <p class="section-eyebrow">Is This You?</p>
+      <h2 class="section-title">Who this is actually for</h2>
+      <p class="section-sub" style="margin-bottom: 28px;"></p>
+
+      <ul class="checklist">
+        <li>You already have some sales experience and want to move into high-ticket offers with real commission upside</li>
+        <li>You're closing or setting but feel like you've hit a ceiling on what you can earn in your current role</li>
+        <li>You want placement with premium offers — not another job board or cold outreach grind</li>
+        <li>You've gone through other programs and found them too basic — you need an advanced tier, not entry-level content</li>
+        <li>You're already making money but feel like you're leaving income on the table with the wrong offers or frameworks</li>
+        <li>You want a clear, structured path to $20k+ months with 1-on-1 coaching behind you</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Pre-Call CTA -->
+    <section class="section" style="text-align: center;">
+      <p class="section-eyebrow">You're Almost There</p>
+      <h2 class="section-title">Watch this before your call</h2>
+      <p class="section-sub">The people who come prepared get 10x more out of the gameplan session. Watch the pre-call videos and come with your questions ready.</p>
+      <a href="/resources" target="_blank" class="cta-btn">Go to Pre-Call Prep →</a>
+      <p style="margin-top: 16px; font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 600;">Your gameplan call is coming. This gets you ready.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FAQ -->
+    <section class="section">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">Common questions</h2>
+      <p class="section-sub" style="margin-bottom: 32px;"></p>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">I already have sales experience. Why would I need this? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">Most experienced reps are underpaid relative to their skill because they're on the wrong offers or using frameworks that cap their close rate. We solve both — premium placement and elite-level training that actually moves the needle for someone who already knows how to sell.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is this the same program you sell to beginners? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">No. The advanced track is structured differently — it assumes baseline competency and goes deeper into close sequencing, offer selection, and income scaling. You won't be sitting through content you already know.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How does placement work? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">We have relationships with high-converting offers across multiple verticals. Once your skills are dialed in, we match you with the right opportunity based on your strengths, schedule, and income goals. We don't just teach — we place.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What does 1-on-1 coaching actually look like? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">Regular call reviews, live feedback on your pitch and close, direct access to your coach between sessions. This isn't a group program where you get generic advice — your numbers and your specific gaps are what we focus on.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What's the gameplan call actually about? <span class="faq-arrow">▼</span></button>
+          <p class="faq-a">It's a no-pressure session to understand where you are, where you want to go, and whether the advanced track is the right fit. We'll be direct with you — if it's not the right move, we'll tell you. If it is, we'll lay out exactly what it looks like.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      This site is not a part of the Facebook™ or Meta™ website or Meta™ Inc. Additionally, this site is NOT endorsed by Facebook™ or Meta™ in any way. Results are not typical. Your results will vary based on effort, experience, and market conditions.
+    </div>
+
+    <footer>
+      © 2025 Rewire Elite Performance — All rights reserved
+    </footer>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btn.closest('.faq-item').classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
