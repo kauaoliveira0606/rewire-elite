@@ -673,7 +673,7 @@
 
   <!-- Next Steps Video -->
   <section class="video-section">
-    <p class="video-label">You're one step closer to your goals - Watch this quick video to move into the next steps</p>
+    <p class="video-label"><span id="video-label-name"></span>you're one step closer to your goals - Watch this quick video to move into the next steps</p>
     <div class="video-border-wrap">
       <div class="video-wrap">
         <vturb-smartplayer id="vid-6a11ce10745d41ed7058cfb2" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
@@ -892,6 +892,8 @@
       document.getElementById('hero-name').textContent = name + ', ';
       var stickyName = document.getElementById('sticky-name');
       if (stickyName) stickyName.textContent = name + ', ';
+      var videoLabelName = document.getElementById('video-label-name');
+      if (videoLabelName) videoLabelName.textContent = name + ', ';
     }
   })();
 </script>
