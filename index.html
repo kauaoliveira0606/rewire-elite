@@ -14,23 +14,6 @@
   <link rel="dns-prefetch" href="https://images.converteai.net">
   <link rel="dns-prefetch" href="https://api.vturb.com.br">
 
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  (function(){var p=new URLSearchParams(window.location.search),m={};var em=p.get('em')||p.get('email');var ph=p.get('ph')||p.get('phone');var fn=p.get('fn')||p.get('first_name');var ln=p.get('ln')||p.get('last_name');if(em)m.em=em;if(ph)m.ph=ph;if(fn)m.fn=fn;if(ln)m.ln=ln;fbq('init','1554159749234800',m);})();
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1554159749234800&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -45,7 +28,10 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://rewire-elite.vercel.app/preview.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap"></noscript>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -615,7 +601,7 @@
   <section class="testimonials" id="testimonials">
     <div class="section-header">
       <div class="section-divider"><div class="section-divider-dot"></div></div>
-      <h2 class="section-label">People just like you who followed the system</h2>
+      <h2 class="section-label">People Who Were Exactly Where You Are Now</h2>
     </div>
     <div class="masonry">
       <div class="t-card"><div class="t-card-inner"><img src="t2.png"  alt="Sedessa – iMessage"></div></div>
@@ -715,6 +701,24 @@
 </script>
 
 <script src="//embed.typeform.com/next/embed.js"></script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){var p=new URLSearchParams(window.location.search),m={};var em=p.get('em')||p.get('email');var ph=p.get('ph')||p.get('phone');var fn=p.get('fn')||p.get('first_name');var ln=p.get('ln')||p.get('last_name');if(em)m.em=em;if(ph)m.ph=ph;if(fn)m.fn=fn;if(ln)m.ln=ln;fbq('init','1554159749234800',m);})();
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1554159749234800&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
 </body>
 </html>
