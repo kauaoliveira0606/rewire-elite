@@ -183,45 +183,11 @@
     .video-border-wrap {
       position: relative;
       border-radius: 10px;
-      padding: 2px;
       overflow: hidden;
-      box-shadow: 0 0 40px rgba(30,80,255,0.2);
-    }
-
-    .video-border-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -100%;
-      background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 110deg,
-        #1a3aff 160deg,
-        #5aabff 180deg,
-        #1a3aff 200deg,
-        transparent 250deg,
-        transparent 360deg
-      );
-      animation: border-chase 2.2s linear infinite;
-      z-index: 0;
-    }
-
-    .video-border-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 2px;
-      background: #000;
-      border-radius: 8px;
-      z-index: 1;
-    }
-
-    @keyframes border-chase {
-      to { transform: rotate(360deg); }
     }
 
     .video-wrap {
       position: relative;
-      z-index: 2;
       border-radius: 8px;
       overflow: hidden;
     }
