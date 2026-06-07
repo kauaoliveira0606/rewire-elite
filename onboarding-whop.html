@@ -323,12 +323,21 @@
     .step-cta {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      margin-top: 12px;
+      gap: 7px;
+      margin-top: 14px;
       font-size: 0.82rem;
       font-weight: 800;
-      color: #4a9eff;
+      color: #fff;
       letter-spacing: 0.04em;
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
+      padding: 9px 20px;
+      border-radius: 999px;
+      box-shadow: 0 0 16px rgba(74,158,255,0.35);
+      transition: opacity 0.2s, box-shadow 0.2s;
+    }
+    .step-card:hover .step-cta {
+      opacity: 0.88;
+      box-shadow: 0 0 24px rgba(74,158,255,0.55);
     }
     .step-cta svg { flex-shrink: 0; }
 
