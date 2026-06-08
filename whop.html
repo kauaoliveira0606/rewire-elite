@@ -35,6 +35,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://www.rewireeliteperformance.com/preview.png">
 
+  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
   <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
   <link rel="preload" href="https://scripts.converteai.net/8d027798-f897-4edf-8711-0177c4b0c53f/players/6a26ed673ebb1a17b4725f6f/v4/player.js" as="script">
   <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
@@ -742,8 +743,13 @@
           </div>
         </div>
 
-        <!-- Whop Checkout Popup -->
-        <button class="btn-primary" onclick="openCheckout()" style="font-size: clamp(1rem, 2vw, 1.2rem); padding: 18px 48px;">Join Now →</button>
+        <!-- Whop Checkout Embed -->
+        <div
+          data-whop-checkout-plan-id="plan_ukro2x7Yynj3T"
+          data-whop-checkout-return-url="https://www.rewireeliteperformance.com/onboarding-whop"
+          data-whop-checkout-theme="dark"
+          style="width:100%; margin: 8px 0 4px;"
+        ></div>
 
         <p class="offer-cancel">Cancel anytime. No commitment required.</p>
       </div>
@@ -1034,18 +1040,7 @@
 </script>
 
 <script>
-  function openCheckout() {
-    var w = 480, h = 700;
-    var left = (screen.width / 2) - (w / 2);
-    var top = (screen.height / 2) - (h / 2);
-    window.open(
-      'https://whop.com/checkout/plan_ukro2x7Yynj3T/',
-      'whop_checkout',
-      'width=' + w + ',height=' + h + ',top=' + top + ',left=' + left + ',scrollbars=yes,resizable=yes'
-    );
-  }
-
-  function toggleFaq(btn) {
+function toggleFaq(btn) {
     var item = btn.parentElement;
     var isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
