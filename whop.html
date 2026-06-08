@@ -643,6 +643,9 @@
       margin: 10px 0 4px;
     }
 
+    @media (max-width: 860px) {
+      .hero-split { grid-template-columns: 1fr !important; }
+    }
     @media (max-width: 560px) {
       .value-card, .offer-block, .final-cta { padding: 28px 20px; }
       .section { padding: 48px 0; }
@@ -678,14 +681,54 @@
 
   <!-- ── Hero ── -->
   <section class="section">
-    <div class="container" style="text-align:center;">
+    <div class="container-wide" style="text-align:center;">
       <h1>Get Placed Into a High Ticket Sales Role in Less Than 21 Days and <span>Start Closing Deals</span></h1>
       <p class="hero-sub">Without needing any previous experience</p>
-      <div style="margin: 28px 0;">
-        <div style="background: linear-gradient(135deg, #1a3aff, #4a9eff); padding: 14px 24px; border-radius: 8px 8px 0 0; text-align: center; font-size: clamp(0.85rem, 1.8vw, 1rem); font-weight: 800; letter-spacing: 0.18em; color: #fff; text-transform: uppercase;">🔊 Click Below to Watch</div>
-        <vturb-smartplayer id="vid-6a26ed673ebb1a17b4725f6f" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+
+      <!-- Two-column: video + checkout -->
+      <div class="hero-split" style="display:grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; text-align:left; align-items:start;">
+
+        <!-- Left: Video -->
+        <div>
+          <div style="background: linear-gradient(135deg, #1a3aff, #4a9eff); padding: 14px 24px; border-radius: 8px 8px 0 0; text-align: center; font-size: clamp(0.82rem, 1.5vw, 1rem); font-weight: 800; letter-spacing: 0.18em; color: #fff; text-transform: uppercase;">🔊 Click Below to Watch</div>
+          <vturb-smartplayer id="vid-6a26ed673ebb1a17b4725f6f" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+        </div>
+
+        <!-- Right: Checkout -->
+        <div id="offer">
+          <div class="offer-block" style="text-align:center;">
+            <div class="offer-tag">⚡ Join Today</div>
+            <div class="offer-price"><span>$</span>0</div>
+            <div class="offer-then">2-day free trial — then <strong>$297/month</strong></div>
+            <div class="offer-perks" style="margin: 16px auto 20px;">
+              <div class="offer-perk">
+                <div class="offer-perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                Full access to all training modules
+              </div>
+              <div class="offer-perk">
+                <div class="offer-perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                Direct job placement within 21 days
+              </div>
+              <div class="offer-perk">
+                <div class="offer-perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                Daily live coaching + accountability
+              </div>
+              <div class="offer-perk">
+                <div class="offer-perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                Private Discord + Skool community
+              </div>
+            </div>
+            <div
+              data-whop-checkout-plan-id="plan_ukro2x7Yynj3T"
+              data-whop-checkout-return-url="https://www.rewireeliteperformance.com/onboarding-whop"
+              data-whop-checkout-theme="dark"
+              style="width:100%; margin: 4px 0;"
+            ></div>
+            <p class="offer-cancel">Cancel anytime. No commitment required.</p>
+          </div>
+        </div>
+
       </div>
-      <a class="btn-primary" href="#offer">Join Rewire Elite →</a>
     </div>
   </section>
 
@@ -703,55 +746,6 @@
         <div class="btn-center">
           <a class="btn-primary" href="#offer">Get Started Today →</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── Offer Block ── -->
-  <section class="section" id="offer">
-    <div class="container">
-      <div class="offer-block">
-        <div class="offer-tag">⚡ Join Today</div>
-        <div class="offer-price"><span>$</span>0</div>
-        <div class="offer-then">2-day free trial — then <strong>$297/month</strong></div>
-        <div class="offer-perks">
-          <div class="offer-perk">
-            <div class="offer-perk-icon">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            Full access to all training modules
-          </div>
-          <div class="offer-perk">
-            <div class="offer-perk-icon">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            Direct job placement within 21 days
-          </div>
-          <div class="offer-perk">
-            <div class="offer-perk-icon">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            Daily live coaching + accountability
-          </div>
-          <div class="offer-perk">
-            <div class="offer-perk-icon">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            Private Discord + Skool community
-          </div>
-        </div>
-
-        <!-- Whop Checkout Embed -->
-        <div
-          data-whop-checkout-plan-id="plan_ukro2x7Yynj3T"
-          data-whop-checkout-return-url="https://www.rewireeliteperformance.com/onboarding-whop"
-          data-whop-checkout-theme="dark"
-          style="width:100%; margin: 8px 0 4px;"
-        ></div>
-
-        <p class="offer-cancel">Cancel anytime. No commitment required.</p>
       </div>
     </div>
   </section>
