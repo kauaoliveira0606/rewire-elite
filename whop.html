@@ -970,29 +970,13 @@
       btn.textContent = 'Sending...';
 
       try {
-        // Create lead in Close CRM
-        const closeRes = await fetch('https://api.close.com/api/v1/lead/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Basic ' + btoa('api_6wttwig7Uve2WAP12ZFcd4.1YzHQYqmsm5NLUgybNPVo7:')
-          },
-          body: JSON.stringify({
-            name: name,
-            contacts: [{ name: name, phones: [{ phone: phone, type: 'office' }] }]
-          })
-        });
-        const closeData = await closeRes.json();
-        const profileUrl = closeData.id ? `https://app.close.com/leads/${closeData.id}/` : 'N/A';
-
-        // Post to Discord
-        await fetch('https://discord.com/api/webhooks/1513627231232987226/2O_Dd93Q-VX6fnGFsN0SB9ez6N-Sfc6dTQw7HBjt5ghVX1l-x1zKk8iM9tTzBaFdU7AU', {
+        const res = await fetch('/api/coach-form', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            content: `📞 **New Call Request**\n**Name:** ${name}\n**Phone:** ${phone}\n**Close CRM:** ${profileUrl}`
-          })
+          body: JSON.stringify({ name, phone })
         });
+
+        if (!res.ok) throw new Error('Server error');
 
         msg.textContent = "You're all set! We'll reach out shortly.";
         msg.style.color = '#4a9eff';
