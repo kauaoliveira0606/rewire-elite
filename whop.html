@@ -645,6 +645,10 @@
 
     @media (max-width: 860px) {
       .hero-split { grid-template-columns: 1fr !important; }
+      .desktop-only { display: none !important; }
+    }
+    @media (min-width: 861px) {
+      .mobile-only { display: none !important; }
     }
     @media (max-width: 560px) {
       .value-card, .offer-block, .final-cta { padding: 28px 20px; }
@@ -688,10 +692,20 @@
       <!-- Two-column: video + checkout -->
       <div class="hero-split" style="display:grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; text-align:left; align-items:start;">
 
-        <!-- Left: Video -->
+        <!-- Left: Video + Value Prop (desktop only below video) -->
         <div>
           <div style="background: linear-gradient(135deg, #1a3aff, #4a9eff); padding: 14px 24px; border-radius: 8px 8px 0 0; text-align: center; font-size: clamp(0.82rem, 1.5vw, 1rem); font-weight: 800; letter-spacing: 0.18em; color: #fff; text-transform: uppercase;">🔊 Click Below to Watch</div>
           <vturb-smartplayer id="vid-6a26ed673ebb1a17b4725f6f" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+          <!-- Value prop below video — desktop only -->
+          <div class="desktop-only" style="margin-top: 24px;">
+            <p class="section-label" style="text-align:left;">💡 What We Do</p>
+            <h2 class="section-title" style="text-align:left; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 16px;">What Is Rewire Elite Performance?</h2>
+            <div class="value-card">
+              <p>Most people trying to break into high-ticket sales are doing it completely wrong. They're memorizing scripts, cold DMing random companies, and wondering why nothing sticks. The truth is — scripts don't close deals. <strong>Communication skills do.</strong></p>
+              <p>Rewire Elite Performance is a hands-on coaching program that teaches you how to actually think, speak, and sell at a high level — then places you directly into a high-ticket sales role so you can start earning within 21 days. We don't just teach you theory. We get you placed and paid.</p>
+              <p>Imagine waking up 3 weeks from now, already working inside a real company as a closer, earning commission on every deal you close — without a degree, without years of experience, and without figuring it out alone. That's what this program is built to deliver.</p>
+            </div>
+          </div>
         </div>
 
         <!-- Right: Checkout -->
@@ -734,8 +748,8 @@
 
   <hr class="divider">
 
-  <!-- ── Value Proposition ── -->
-  <section class="section">
+  <!-- ── Value Proposition (mobile only) ── -->
+  <section class="section mobile-only">
     <div class="container">
       <p class="section-label">💡 What We Do</p>
       <h2 class="section-title">What Is Rewire Elite Performance?</h2>
