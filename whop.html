@@ -617,8 +617,8 @@
     @media (max-width: 860px) {
       .hero-split { grid-template-columns: 1fr !important; }
       .desktop-only { display: none !important; }
-      .hero-split > div:first-child { order: 2 !important; }
-      #offer { order: 1 !important; }
+      .hero-split > div:first-child { order: 1 !important; }
+      #offer { order: 2 !important; }
     }
     @media (min-width: 861px) {
       .mobile-only { display: none !important; }
@@ -657,8 +657,8 @@
         <div>
           <div style="background: linear-gradient(135deg, #1a3aff, #4a9eff); padding: 14px 24px; border-radius: 8px 8px 0 0; text-align: center; font-size: clamp(0.82rem, 1.5vw, 1rem); font-weight: 800; letter-spacing: 0.18em; color: #fff; text-transform: uppercase;">🔊 Click Below to Watch</div>
           <vturb-smartplayer id="vid-6a297de85919c3d48847c511" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
-          <!-- Coach form below video -->
-          <div style="margin-top: 24px;">
+          <!-- Coach form below video — desktop only -->
+          <div class="desktop-only" style="margin-top: 24px;">
             <p class="section-label" style="text-align:left;">📞 Get In Touch</p>
             <h2 class="section-title" style="text-align:left; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 16px;">Want to Talk to a Coach?</h2>
             <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:16px;">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
@@ -713,6 +713,23 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ── Mobile-only coach form ── -->
+  <section class="section mobile-only">
+    <div class="container" style="text-align:center;">
+      <p class="section-label">📞 Get In Touch</p>
+      <h2 class="section-title">Have Questions and Want to Talk to a Coach?</h2>
+      <p class="section-sub">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
+      <form id="coach-form" style="max-width:420px; margin: 32px auto 0; display:flex; flex-direction:column; gap:14px;">
+        <input type="text" id="coach-name" placeholder="Your Name" required
+          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; color:#fff; font-size:1rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
+        <input type="tel" id="coach-phone" placeholder="Phone Number" required
+          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; color:#fff; font-size:1rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
+        <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">Request a Call →</button>
+        <p id="coach-msg" style="font-size:0.85rem; color:#4a9eff; display:none; margin:0;"></p>
+      </form>
     </div>
   </section>
 
@@ -986,6 +1003,11 @@
     document.getElementById('coach-form-desktop').addEventListener('submit', function(e) {
       e.preventDefault();
       submitCoachForm('coach-name-desktop', 'coach-phone-desktop', 'coach-msg-desktop', this.querySelector('button[type="submit"]'));
+    });
+
+    document.getElementById('coach-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitCoachForm('coach-name', 'coach-phone', 'coach-msg', this.querySelector('button[type="submit"]'));
     });
   </script>
 
