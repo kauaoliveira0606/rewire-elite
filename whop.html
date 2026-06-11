@@ -628,6 +628,7 @@
     }
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
 
@@ -661,19 +662,12 @@
           <p style="font-size:0.78rem; font-weight:600; color:rgba(255,255,255,0.38);">Cancel anytime. No commitment required.</p>
         </div>
 
-        <!-- Coach form -->
+        <!-- Calendly embed -->
         <div style="text-align:center;">
           <p class="section-label">📞 Get In Touch</p>
           <h2 class="section-title" style="font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 12px;">Have Questions and Want to Talk to a Coach?</h2>
-          <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:20px;">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
-          <form id="coach-form" style="max-width:420px; margin: 0 auto; display:flex; flex-direction:column; gap:12px;">
-            <input type="text" id="coach-name" placeholder="Your Name" required
-              style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:13px 16px; color:#fff; font-size:0.95rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
-            <input type="tel" id="coach-phone" placeholder="Phone Number" required
-              style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:13px 16px; color:#fff; font-size:0.95rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
-            <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">Request a Call →</button>
-            <p id="coach-msg" style="font-size:0.85rem; color:#4a9eff; display:none; margin:0;"></p>
-          </form>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:20px;">Book a quick intro call with the Rewire team and we'll answer any questions and point you in the right direction.</p>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/d/cx3w-236-x56/intro-call-with-rewire-elite-performance?background_color=000000&text_color=ffffff&primary_color=4a9eff" style="min-width:320px; height:700px;"></div>
         </div>
 
       </div>
@@ -914,44 +908,6 @@
     <a class="btn-primary" href="/checkout">Start Your 2-Day Free Trial →</a>
   </div>
 
-  <script>
-    async function submitCoachForm(nameId, phoneId, msgId, btn) {
-      const name = document.getElementById(nameId).value.trim();
-      const phone = document.getElementById(phoneId).value.trim();
-      const msg = document.getElementById(msgId);
-
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-
-      try {
-        const res = await fetch('/api/coach-form', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, phone })
-        });
-
-        if (!res.ok) throw new Error('Server error');
-
-        msg.textContent = "You're all set! We'll reach out shortly.";
-        msg.style.color = '#4a9eff';
-        msg.style.display = 'block';
-        document.getElementById(nameId).value = '';
-        document.getElementById(phoneId).value = '';
-      } catch (err) {
-        msg.textContent = 'Something went wrong. Please try again.';
-        msg.style.color = '#ff6b6b';
-        msg.style.display = 'block';
-      }
-
-      btn.disabled = false;
-      btn.textContent = 'Request a Call →';
-    }
-
-    document.getElementById('coach-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      submitCoachForm('coach-name', 'coach-phone', 'coach-msg', this.querySelector('button[type="submit"]'));
-    });
-  </script>
 
   <!-- ── Footer ── -->
   <footer>
