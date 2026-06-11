@@ -655,15 +655,19 @@
         <div>
           <div style="background: linear-gradient(135deg, #1a3aff, #4a9eff); padding: 14px 24px; border-radius: 8px 8px 0 0; text-align: center; font-size: clamp(0.82rem, 1.5vw, 1rem); font-weight: 800; letter-spacing: 0.18em; color: #fff; text-transform: uppercase;">🔊 Click Below to Watch</div>
           <vturb-smartplayer id="vid-6a297de85919c3d48847c511" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
-          <!-- Value prop below video — desktop only -->
+          <!-- Coach form below video — desktop only -->
           <div class="desktop-only" style="margin-top: 24px;">
-            <p class="section-label" style="text-align:left;">💡 What We Do</p>
-            <h2 class="section-title" style="text-align:left; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 16px;">What Is Rewire Elite Performance?</h2>
-            <div class="value-card">
-              <p>Most gurus hide high-ticket sales training and role placement behind a <strong>$5,000 or $10,000 paywall</strong>. They make you wait weeks or months before applying to roles - not because that's the right approach, but because they don't have the system to get you placed. Today, that ends.</p>
-              <p>We give you better training and placement that everyone else charges $10K upfront for - <strong>for a monthly membership</strong>. 200 fresh verified roles delivered to you every week. Live coaching calls. A 150-lesson curriculum. And a placement team that has placed over 5,000 reps with a <strong>95% success rate in under 45 days</strong>.</p>
-              <p>You don't need years of experience. You don't need a perfect resume. You just need the right pipeline of opportunities, the right training system, and the right team walking you through it step by step. That's exactly what this is.</p>
-            </div>
+            <p class="section-label" style="text-align:left;">📞 Get In Touch</p>
+            <h2 class="section-title" style="text-align:left; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 16px;">Want to Talk to a Coach?</h2>
+            <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:16px;">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
+            <form id="coach-form-desktop" style="display:flex; flex-direction:column; gap:12px;">
+              <input type="text" id="coach-name-desktop" placeholder="Your Name" required
+                style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:12px 16px; color:#fff; font-size:0.95rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
+              <input type="tel" id="coach-phone-desktop" placeholder="Phone Number" required
+                style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:12px 16px; color:#fff; font-size:0.95rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
+              <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">Request a Call →</button>
+              <p id="coach-msg-desktop" style="font-size:0.85rem; color:#4a9eff; display:none; margin:0;"></p>
+            </form>
           </div>
         </div>
 
@@ -712,28 +716,8 @@
 
   <hr class="divider">
 
-  <!-- ── Talk to a Coach ── -->
+  <!-- ── Value Proposition ── -->
   <section class="section">
-    <div class="container" style="text-align:center;">
-      <p class="section-label">📞 Get In Touch</p>
-      <h2 class="section-title">Want to Talk to a Coach?</h2>
-      <p class="section-sub">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
-
-      <form id="coach-form" style="max-width:420px; margin: 32px auto 0; display:flex; flex-direction:column; gap:14px;">
-        <input type="text" id="coach-name" placeholder="Your Name" required
-          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; color:#fff; font-size:1rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
-        <input type="tel" id="coach-phone" placeholder="Phone Number" required
-          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; color:#fff; font-size:1rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
-        <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">Request a Call →</button>
-        <p id="coach-msg" style="font-size:0.85rem; color:#4a9eff; display:none; margin:0;"></p>
-      </form>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── Value Proposition (mobile only) ── -->
-  <section class="section mobile-only">
     <div class="container">
       <p class="section-label">💡 What We Do</p>
       <h2 class="section-title">What Is Rewire Elite Performance?</h2>
@@ -745,6 +729,23 @@
           <a class="btn-primary" href="#offer">Get Started Today →</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── Mobile-only coach form ── -->
+  <section class="section mobile-only">
+    <div class="container" style="text-align:center;">
+      <p class="section-label">📞 Get In Touch</p>
+      <h2 class="section-title">Want to Talk to a Coach?</h2>
+      <p class="section-sub">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
+      <form id="coach-form" style="max-width:420px; margin: 32px auto 0; display:flex; flex-direction:column; gap:14px;">
+        <input type="text" id="coach-name" placeholder="Your Name" required
+          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; color:#fff; font-size:1rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
+        <input type="tel" id="coach-phone" placeholder="Phone Number" required
+          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; color:#fff; font-size:1rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
+        <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">Request a Call →</button>
+        <p id="coach-msg" style="font-size:0.85rem; color:#4a9eff; display:none; margin:0;"></p>
+      </form>
     </div>
   </section>
 
@@ -965,12 +966,10 @@
   </div>
 
   <script>
-    document.getElementById('coach-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const name = document.getElementById('coach-name').value.trim();
-      const phone = document.getElementById('coach-phone').value.trim();
-      const msg = document.getElementById('coach-msg');
-      const btn = this.querySelector('button[type="submit"]');
+    async function submitCoachForm(nameId, phoneId, msgId, btn) {
+      const name = document.getElementById(nameId).value.trim();
+      const phone = document.getElementById(phoneId).value.trim();
+      const msg = document.getElementById(msgId);
 
       btn.disabled = true;
       btn.textContent = 'Sending...';
@@ -987,8 +986,8 @@
         msg.textContent = "You're all set! We'll reach out shortly.";
         msg.style.color = '#4a9eff';
         msg.style.display = 'block';
-        document.getElementById('coach-name').value = '';
-        document.getElementById('coach-phone').value = '';
+        document.getElementById(nameId).value = '';
+        document.getElementById(phoneId).value = '';
       } catch (err) {
         msg.textContent = 'Something went wrong. Please try again.';
         msg.style.color = '#ff6b6b';
@@ -997,6 +996,16 @@
 
       btn.disabled = false;
       btn.textContent = 'Request a Call →';
+    }
+
+    document.getElementById('coach-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitCoachForm('coach-name', 'coach-phone', 'coach-msg', this.querySelector('button[type="submit"]'));
+    });
+
+    document.getElementById('coach-form-desktop').addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitCoachForm('coach-name-desktop', 'coach-phone-desktop', 'coach-msg-desktop', this.querySelector('button[type="submit"]'));
     });
   </script>
 
