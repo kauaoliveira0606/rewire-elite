@@ -1,48 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout — Rewire Elite Performance</title>
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" href="/favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Rewire Elite Performance</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Get placed into a high-ticket sales role in less than 21 days - without paying thousands upfront.">
 
   <!-- Meta Pixel -->
   <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1554159749234800');
-    fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  (function(){var p=new URLSearchParams(window.location.search),m={};var em=p.get('em')||p.get('email');var ph=p.get('ph')||p.get('phone');var fn=p.get('fn')||p.get('first_name');var ln=p.get('ln')||p.get('last_name');if(em)m.em=em;if(ph)m.ph=ph;if(fn)m.fn=fn;if(ln)m.ln=ln;fbq('init','1554159749234800',m);})();
+  fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1554159749234800&ev=PageView&noscript=1"/></noscript>
 
-  <!-- Whop Checkout SDK -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
   <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      height: 100%;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
       background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      justify-content: center;
+      padding: 20px 24px 16px;
+    }
+    .logo-wrap { display: block; width: 160px; max-width: 55%; }
+    .logo-wrap img { width: 100%; display: block; mix-blend-mode: screen; }
+
+    /* ── Main layout ── */
+    .page-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 24px 24px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ── Left: copy ── */
+    .page-copy {}
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(26,58,255,0.25), rgba(74,158,255,0.15));
+      border: 1px solid rgba(74,158,255,0.4);
+      border-radius: 999px;
+      padding: 7px 20px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #4a9eff;
+      margin-bottom: 20px;
+    }
+    .page-copy h1 {
+      font-size: clamp(1.55rem, 3vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .page-copy .sub {
+      font-size: clamp(0.9rem, 1.6vw, 1rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      text-decoration: underline;
+    }
+
+    /* ── Perks list on left ── */
+    .perks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .perk-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.4;
+    }
+    .perk-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: Inter, system-ui, sans-serif;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
-    .checkout-wrap {
-      width: 100%;
-      max-width: 520px;
-      padding: 24px 16px;
+    .trust-note {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.6;
+    }
+
+    /* ── Right: offer block ── */
+    .offer-block {
+      background: linear-gradient(135deg, #060e1f, #0a1d3f);
+      border: 2px solid rgba(74,158,255,0.5);
+      border-radius: 20px;
+      padding: 36px 36px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(74,158,255,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-block::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(74,158,255,0.18), transparent 50%, rgba(74,158,255,0.08));
+      pointer-events: none;
+    }
+    .offer-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
+      border-radius: 999px;
+      padding: 7px 22px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 0 18px rgba(74,158,255,0.4);
+    }
+    .offer-price {
+      font-size: clamp(3rem, 7vw, 4.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .offer-price span {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      vertical-align: super;
+    }
+    .offer-then {
+      font-size: clamp(0.88rem, 1.6vw, 1rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 6px;
+    }
+    .offer-then strong { color: #fff; }
+    .offer-sub {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+    .offer-perks {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 380px;
+      margin: 0 auto 24px;
+      text-align: left;
+    }
+    .offer-perk {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+    }
+    .offer-perk-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .offer-cancel {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.38);
+      margin-top: 12px;
+    }
+
+    /* ── Divider ── */
+    .offer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 20px 0;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 760px) {
+      .page-wrap {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 16px 16px 48px;
+      }
+      .offer-block { padding: 28px 20px; }
     }
   </style>
 </head>
 <body>
-  <div class="checkout-wrap">
-    <div
-      data-whop-checkout-plan-id="plan_ukro2x7Yynj3T"
-      data-whop-checkout-return-url="https://www.rewireeliteperformance.com/onboarding-whop"
-      data-whop-checkout-theme="dark"
-      style="width:100%;"
-    ></div>
+  <header>
+    <a class="logo-wrap" href="/">
+      <img src="logo.png" alt="Rewire Elite Performance">
+    </a>
+  </header>
+
+  <div class="page-wrap">
+    <!-- Left: copy -->
+    <div class="page-copy">
+      <div class="badge">⚡ Limited Spots Available</div>
+      <h1>Get Placed Into a High Ticket Sales Role in Less Than 21 Days Without Paying Thousands Upfront</h1>
+      <p class="sub">95% placement success rate in under 45 days across 5,000+ students</p>
+
+      <div class="perks-list">
+        <div class="perk-row">
+          <div class="perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Full access to all training modules
+        </div>
+        <div class="perk-row">
+          <div class="perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Instant access to 200 new roles a week + thousands of previous listings
+        </div>
+        <div class="perk-row">
+          <div class="perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Live placement and sales training
+        </div>
+        <div class="perk-row">
+          <div class="perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Private Discord Community
+        </div>
+        <div class="perk-row">
+          <div class="perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Private Skool Community
+        </div>
+        <div class="perk-row">
+          <div class="perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Dedicated placement team working to get you hired
+        </div>
+      </div>
+
+      <p class="trust-note">Start your 2-day free trial today. Cancel anytime - no commitment required.<br>Results depend on effort, the role you land, and price point.</p>
+    </div>
+
+    <!-- Right: checkout -->
+    <div class="offer-block">
+      <div class="offer-tag">⚡ Join Today</div>
+      <div class="offer-price"><span>$</span>0</div>
+      <div class="offer-then">2-day free trial — then <strong>$297/month</strong></div>
+      <div class="offer-sub">Cancel anytime</div>
+
+      <hr class="offer-divider">
+
+      <div class="offer-perks">
+        <div class="offer-perk">
+          <div class="offer-perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Full access to all training modules
+        </div>
+        <div class="offer-perk">
+          <div class="offer-perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          200 new roles a week + thousands of listings
+        </div>
+        <div class="offer-perk">
+          <div class="offer-perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Live placement and sales training
+        </div>
+        <div class="offer-perk">
+          <div class="offer-perk-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Private Discord &amp; Skool Community
+        </div>
+      </div>
+
+      <div
+        data-whop-checkout-plan-id="plan_ukro2x7Yynj3T"
+        data-whop-checkout-return-url="https://www.rewireeliteperformance.com/onboarding-whop"
+        data-whop-checkout-theme="dark"
+        style="width:100%; margin: 4px 0;"
+      ></div>
+      <p class="offer-cancel">Cancel anytime. No commitment required.</p>
+    </div>
   </div>
 </body>
 </html>
