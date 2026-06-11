@@ -752,6 +752,19 @@
       <p class="section-label">⭐ Results</p>
       <h2 class="section-title">What Others Are Saying About Rewire Elite Performance</h2>
 
+      <!-- Testimonial videos -->
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:32px;">
+        <div style="flex:1; min-width:260px; max-width:420px;">
+          <vturb-smartplayer id="vid-6a2b1acd3244f7b854abcf02" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+        </div>
+        <div style="flex:1; min-width:220px; max-width:360px;">
+          <vturb-smartplayer id="vid-69e0fc2f31710251e5b215e7" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+        </div>
+        <div style="flex:1; min-width:220px; max-width:360px;">
+          <vturb-smartplayer id="vid-69e0fc55237c448f77db40fb" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+        </div>
+      </div>
+
       <!-- Testimonial images -->
       <div class="t-grid" style="columns: 3 240px; column-gap: 12px; margin-top: 8px;">
         <div style="break-inside:avoid; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid rgba(74,158,255,0.2);"><img src="t2.png" style="width:100%; display:block;" alt="Student Result"></div>
@@ -911,10 +924,12 @@
 </div>
 
 <script type="text/javascript">
-  var s=document.createElement("script");
-  s.src="https://scripts.converteai.net/8d027798-f897-4edf-8711-0177c4b0c53f/players/6a2b13ec98c296823d0c7386/v4/player.js";
-  s.async=!0;
-  document.head.appendChild(s);
+  ["6a2b13ec98c296823d0c7386","6a2b1acd3244f7b854abcf02","69e0fc2f31710251e5b215e7","69e0fc55237c448f77db40fb"].forEach(function(id){
+    var s=document.createElement("script");
+    s.src="https://scripts.converteai.net/8d027798-f897-4edf-8711-0177c4b0c53f/players/"+id+"/v4/player.js";
+    s.async=!0;
+    document.head.appendChild(s);
+  });
 </script>
 
 <script>
