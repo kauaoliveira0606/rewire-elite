@@ -651,8 +651,8 @@
       <!-- Two-column: video + checkout -->
       <div class="hero-split" style="display:grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; text-align:left; align-items:start;">
 
-        <!-- Left: Video + Value Prop (desktop only below video) -->
-        <div>
+        <!-- Left: Video + Coach Form -->
+        <div style="order: 1;">
           <div style="background: linear-gradient(135deg, #1a3aff, #4a9eff); padding: 14px 24px; border-radius: 8px 8px 0 0; text-align: center; font-size: clamp(0.82rem, 1.5vw, 1rem); font-weight: 800; letter-spacing: 0.18em; color: #fff; text-transform: uppercase;">🔊 Click Below to Watch</div>
           <vturb-smartplayer id="vid-6a297de85919c3d48847c511" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
           <!-- Coach form below video -->
@@ -672,7 +672,7 @@
         </div>
 
         <!-- Right: Checkout -->
-        <div id="offer">
+        <div id="offer" style="order: 2;">
           <div class="offer-block" style="text-align:center;">
             <div class="offer-tag">⚡ Join Today</div>
             <div class="offer-price"><span>$</span>0</div>
