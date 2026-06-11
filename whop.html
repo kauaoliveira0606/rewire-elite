@@ -649,52 +649,34 @@
       <h1 style="font-size: clamp(1.55rem, 3vw, 2.6rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em;">Get Placed Into a High Ticket Sales Role in Less Than 21 Days Without Paying Thousands Upfront</h1>
       <p class="hero-sub"><u>95% placement success rate in under 45 days across 5,000+ students</u></p>
 
-      <!-- Two-column: video + checkout -->
-      <div class="hero-split" style="display:grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; text-align:left; align-items:start;">
+      <!-- Stacked: video → CTA → coach form -->
+      <div style="max-width: 720px; margin: 28px auto 0; display:flex; flex-direction:column; gap:28px;">
 
-        <!-- Left: Video + Coach Form -->
-        <div>
-          <vturb-smartplayer id="vid-6a297de85919c3d48847c511" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
-          <!-- Coach form below video — desktop only -->
-          <div class="desktop-only" style="margin-top: 24px;">
-            <p class="section-label" style="text-align:left;">📞 Get In Touch</p>
-            <h2 class="section-title" style="text-align:left; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 16px;">Want to Talk to a Coach?</h2>
-            <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:16px;">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
-            <form id="coach-form-desktop" style="display:flex; flex-direction:column; gap:12px;">
-              <input type="text" id="coach-name-desktop" placeholder="Your Name" required
-                style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:12px 16px; color:#fff; font-size:0.95rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
-              <input type="tel" id="coach-phone-desktop" placeholder="Phone Number" required
-                style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:12px 16px; color:#fff; font-size:0.95rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
-              <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">Request a Call →</button>
-              <p id="coach-msg-desktop" style="font-size:0.85rem; color:#4a9eff; display:none; margin:0;"></p>
-            </form>
-          </div>
-        </div>
+        <!-- Video -->
+        <vturb-smartplayer id="vid-6a297de85919c3d48847c511" style="display:block; width:100%;"></vturb-smartplayer>
 
-        <!-- Right: CTA -->
-        <div id="offer" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding: 32px 0;">
-          <a class="btn-primary" href="/checkout" style="font-size:clamp(1rem,2vw,1.2rem); padding:20px 48px;">Start Your 2-Day Free Trial →</a>
+        <!-- CTA -->
+        <div id="offer" style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <a class="btn-primary" href="/checkout" style="font-size:clamp(1rem,2vw,1.15rem); padding:20px 48px;">Start Your 2-Day Free Trial →</a>
           <p style="font-size:0.78rem; font-weight:600; color:rgba(255,255,255,0.38);">Cancel anytime. No commitment required.</p>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <!-- Coach form -->
+        <div style="text-align:center;">
+          <p class="section-label">📞 Get In Touch</p>
+          <h2 class="section-title" style="font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 12px;">Have Questions and Want to Talk to a Coach?</h2>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:20px;">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
+          <form id="coach-form" style="max-width:420px; margin: 0 auto; display:flex; flex-direction:column; gap:12px;">
+            <input type="text" id="coach-name" placeholder="Your Name" required
+              style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:13px 16px; color:#fff; font-size:0.95rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
+            <input type="tel" id="coach-phone" placeholder="Phone Number" required
+              style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:13px 16px; color:#fff; font-size:0.95rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
+            <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">Request a Call →</button>
+            <p id="coach-msg" style="font-size:0.85rem; color:#4a9eff; display:none; margin:0;"></p>
+          </form>
+        </div>
 
-  <!-- ── Mobile-only coach form ── -->
-  <section class="section mobile-only">
-    <div class="container" style="text-align:center;">
-      <p class="section-label">📞 Get In Touch</p>
-      <h2 class="section-title">Have Questions and Want to Talk to a Coach?</h2>
-      <p class="section-sub">Put your name and number down and we'll get a coach on a quick 5-minute phone call to answer any questions and point you in the right direction.</p>
-      <form id="coach-form" style="max-width:420px; margin: 32px auto 0; display:flex; flex-direction:column; gap:14px;">
-        <input type="text" id="coach-name" placeholder="Your Name" required
-          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; color:#fff; font-size:1rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
-        <input type="tel" id="coach-phone" placeholder="Phone Number" required
-          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; color:#fff; font-size:1rem; font-family:inherit; outline:none; width:100%; box-sizing:border-box;">
-        <button type="submit" class="btn-primary" style="border:none; cursor:pointer; width:100%;">Request a Call →</button>
-        <p id="coach-msg" style="font-size:0.85rem; color:#4a9eff; display:none; margin:0;"></p>
-      </form>
+      </div>
     </div>
   </section>
 
@@ -964,11 +946,6 @@
       btn.disabled = false;
       btn.textContent = 'Request a Call →';
     }
-
-    document.getElementById('coach-form-desktop').addEventListener('submit', function(e) {
-      e.preventDefault();
-      submitCoachForm('coach-name-desktop', 'coach-phone-desktop', 'coach-msg-desktop', this.querySelector('button[type="submit"]'));
-    });
 
     document.getElementById('coach-form').addEventListener('submit', function(e) {
       e.preventDefault();
