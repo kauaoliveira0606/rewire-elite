@@ -278,7 +278,7 @@
   <!-- Hero -->
   <section class="hero">
     <p class="hero-label">✅ Confirmed</p>
-    <h1>You're Booked In!</h1>
+    <h1><span id="hero-name"></span>You're Booked In!</h1>
 
     <div class="attention-bar">
       <span class="tag">📅 What Happens Next</span>
@@ -434,6 +434,18 @@
   </footer>
 
 </div>
+
+<script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var name = params.get('name') || params.get('first_name') || '';
+    if (name) {
+      name = decodeURIComponent(name).trim();
+      name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+      document.getElementById('hero-name').textContent = name + ', ';
+    }
+  })();
+</script>
 
 <script type="text/javascript">
   ["6a317c03bd5f8521bf354b0b","69e0fc2f31710251e5b215e7","69e0fc55237c448f77db40fb","6a11ce10745d41ed7058cfb2","6a11b27078ec206077d2fc8d","6a11b26587b3af3be2d1ec2e","6a11b23acc76db57e225ad9c","6a11b23478ec206077d2fc20","6a11b26087b3af3be2d1ec1c"].forEach(function(id){
