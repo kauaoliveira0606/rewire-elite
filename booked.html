@@ -222,6 +222,19 @@
       padding: 32px 20px;
       text-align: center;
     }
+    .video-section { max-width: 1100px; margin: 0 auto; padding: 0 20px 48px; }
+    .video-label { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(0.92rem, 2vw, 1.4rem); font-style: italic; color: #fff; text-align: center; margin-bottom: 16px; }
+    .video-border-wrap { position: relative; border-radius: 10px; padding: 2px; overflow: hidden; box-shadow: 0 0 40px rgba(30,80,255,0.2); }
+    .video-border-wrap::before { content: ''; position: absolute; inset: -100%; background: conic-gradient(from 0deg, transparent 0deg, transparent 120deg, #1a3aff 165deg, #5aabff 180deg, #1a3aff 195deg, transparent 240deg, transparent 360deg); animation: border-chase 3.5s linear infinite; z-index: 0; }
+    @keyframes border-chase { to { transform: rotate(360deg); } }
+    .video-wrap { position: relative; z-index: 1; background: #000; border-radius: 9px; overflow: hidden; }
+    .questions-section { max-width: 860px; margin: 0 auto; padding: 0 24px 60px; }
+    .questions-section h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 900; text-align: center; color: #fff; margin-bottom: 8px; }
+    .questions-section .q-sub { text-align: center; font-size: clamp(0.88rem, 1.8vw, 1rem); font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 40px; line-height: 1.7; max-width: 620px; margin-left: auto; margin-right: auto; }
+    .q-item { margin-bottom: 40px; }
+    .q-title { font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 900; color: #fff; margin-bottom: 14px; text-align: center; }
+    .q-video { position: relative; border-radius: 10px; padding: 2px; overflow: hidden; box-shadow: 0 0 30px rgba(30,80,255,0.15); background: linear-gradient(135deg, #07121f, #0d2240); }
+
     footer img { width: 140px; opacity: 0.5; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; mix-blend-mode: screen; }
     .footer-links {
       display: flex;
@@ -279,6 +292,87 @@
     <h2 style="font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 12px;">Help Us Build Your Personalized Game Plan</h2>
     <p style="font-size: clamp(0.9rem, 1.8vw, 1.05rem); font-weight: 600; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 28px;">Answer a few quick questions so our team can come fully prepared and tailor the call specifically to your situation.</p>
     <div data-tf-live="01KV6EKGQZ1JFHG47V0WTSKCDC"></div>
+  </section>
+
+  <!-- Step 1 -->
+  <section class="video-section">
+    <p class="video-label"><strong style="font-weight:900;">Step 1:</strong> Watch this quick video to move into the next steps</p>
+    <div class="video-border-wrap">
+      <div class="video-wrap">
+        <vturb-smartplayer id="vid-6a11ce10745d41ed7058cfb2" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 2 -->
+  <section style="max-width: 1100px; margin: 0 auto; padding: 0 20px 48px;">
+    <p class="video-label"><strong style="font-weight:900;">Step 2:</strong> Confirm Your Call</p>
+    <div style="background: linear-gradient(135deg, #07121f, #0c1d38); border: 1px solid rgba(74,158,255,0.25); border-radius: 16px; padding: 32px 36px; max-width: 860px; margin: 0 auto;">
+      <p style="font-size: clamp(0.95rem, 2vw, 1.15rem); font-weight: 600; color: #fff; line-height: 1.65; margin-bottom: 24px;">Confirm the call by replying "yes" to our text or email AND selecting "yes" in the email calendar invitation.</p>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+          <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #1a3aff, #4a9eff); display: flex; align-items: center; justify-content: center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <p style="font-size: clamp(0.88rem, 1.8vw, 1rem); color: #fff; font-weight: 600; line-height: 1.6; padding-top: 4px;">Search your inbox for <strong>"Invitation"</strong></p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+          <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #1a3aff, #4a9eff); display: flex; align-items: center; justify-content: center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <p style="font-size: clamp(0.88rem, 1.8vw, 1rem); color: #fff; font-weight: 600; line-height: 1.6; padding-top: 4px;">Click <strong>"add to calendar"</strong> and <strong>"yes"</strong> for the calendar invitation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Image -->
+  <section style="max-width: 1100px; margin: 0 auto; padding: 0 20px 48px;">
+    <div style="max-width: 860px; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid rgba(74,158,255,0.25); box-shadow: 0 0 30px rgba(74,158,255,0.1);">
+      <img src="email.avif" alt="Email Confirmation Example" style="width: 100%; display: block;">
+    </div>
+  </section>
+
+  <!-- Step 3 -->
+  <section class="questions-section">
+    <p style="text-align:center; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.18em; color: #4a9eff; margin-bottom: 10px; text-transform: uppercase;">Watch Before Your Call</p>
+    <h2>Step 3: Get All Of Your Questions Answered Below</h2>
+    <p class="q-sub">The coach will skip the basics if you watch these — come prepared, you'll get way more out of the call and go straight into your gameplan.</p>
+
+    <div class="q-item">
+      <p class="q-title">What Is High Ticket Sales?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-6a11b27078ec206077d2fc8d" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What Are We Selling?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-6a11b26587b3af3be2d1ec2e" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What If I Don't Have Any Sales Experience?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-6a11b23acc76db57e225ad9c" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">What Are Realistic Results?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-6a11b23478ec206077d2fc20" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <p class="q-title">How Much Time Do I Need For This?</p>
+      <div class="q-video">
+        <vturb-smartplayer id="vid-6a11b26087b3af3be2d1ec1c" style="display:block; margin:0 auto; width:100%;"></vturb-smartplayer>
+      </div>
+    </div>
   </section>
 
   <!-- Testimonials -->
@@ -342,7 +436,7 @@
 </div>
 
 <script type="text/javascript">
-  ["6a317c03bd5f8521bf354b0b","69e0fc2f31710251e5b215e7","69e0fc55237c448f77db40fb"].forEach(function(id){
+  ["6a317c03bd5f8521bf354b0b","69e0fc2f31710251e5b215e7","69e0fc55237c448f77db40fb","6a11ce10745d41ed7058cfb2","6a11b27078ec206077d2fc8d","6a11b26587b3af3be2d1ec2e","6a11b23acc76db57e225ad9c","6a11b23478ec206077d2fc20","6a11b26087b3af3be2d1ec1c"].forEach(function(id){
     var s=document.createElement("script");
     s.src="https://scripts.converteai.net/8d027798-f897-4edf-8711-0177c4b0c53f/players/"+id+"/v4/player.js";
     s.async=!0;
