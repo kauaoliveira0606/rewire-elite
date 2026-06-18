@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commitment — Rewire Elite Performance</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  (function(){var p=new URLSearchParams(window.location.search),m={};var em=p.get('em')||p.get('email');var ph=p.get('ph')||p.get('phone');var fn=p.get('fn')||p.get('first_name');var ln=p.get('ln')||p.get('last_name');if(em)m.em=em;if(ph)m.ph=ph;if(fn)m.fn=fn;if(ln)m.ln=ln;fbq('init','1554159749234800',m);})();
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1554159749234800&ev=PageView&noscript=1"/></noscript>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, #000 0%, #040d18 45%, #000 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .page { position: relative; z-index: 1; }
+
+    header {
+      display: flex;
+      justify-content: center;
+      padding: 28px 24px 16px;
+    }
+    .logo-wrap { display: block; width: 160px; max-width: 55%; }
+    .logo-wrap img { width: 100%; display: block; mix-blend-mode: screen; }
+
+    .hero {
+      text-align: center;
+      padding: 24px 24px 0;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .hero-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #4a9eff;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.12;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .hero-attr {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #4a9eff;
+      margin-bottom: 40px;
+    }
+
+    /* Main card */
+    .card {
+      background: linear-gradient(135deg, #07121f, #0c1d38);
+      border: 1px solid rgba(74,158,255,0.25);
+      border-radius: 20px;
+      max-width: 760px;
+      margin: 0 auto 48px;
+      padding: 40px 40px;
+    }
+
+    /* Counter */
+    .counter-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .counter-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .counter-val {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #4a9eff;
+    }
+    .counter-bar-track {
+      flex: 1;
+      margin: 0 16px;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .counter-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #1a3aff, #4a9eff);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    /* Commitment items */
+    .commitments {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .commit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      user-select: none;
+    }
+    .commit-item:hover { border-color: rgba(74,158,255,0.3); }
+    .commit-item.checked {
+      background: rgba(74,158,255,0.07);
+      border-color: rgba(74,158,255,0.45);
+    }
+    .commit-checkbox {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.2);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .commit-item.checked .commit-checkbox {
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
+      border-color: transparent;
+    }
+    .commit-checkbox svg { display: none; }
+    .commit-item.checked .commit-checkbox svg { display: block; }
+    .commit-text {
+      font-size: clamp(0.88rem, 1.6vw, 0.95rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+    }
+    .commit-item.checked .commit-text { color: #fff; }
+
+    /* Form fields */
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .form-group label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .form-group input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus { border-color: rgba(74,158,255,0.5); }
+    .form-group input::placeholder { color: rgba(255,255,255,0.25); }
+
+    /* Signature */
+    .sig-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+    .sig-wrap {
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      margin-bottom: 8px;
+    }
+    .sig-wrap canvas {
+      display: block;
+      width: 100%;
+      height: 130px;
+      cursor: crosshair;
+      touch-action: none;
+    }
+    .sig-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.18);
+      font-style: italic;
+    }
+    .sig-clear {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+    }
+    .sig-clear:hover { color: rgba(255,255,255,0.6); }
+
+    /* Witnessed by */
+    .witnessed {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      margin-top: 16px;
+    }
+    .witnessed span { color: #4a9eff; font-weight: 800; }
+
+    /* Submit */
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
+      border: none;
+      border-radius: 14px;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-weight: 900;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 28px;
+      letter-spacing: 0.01em;
+      box-shadow: 0 0 30px rgba(74,158,255,0.35);
+      transition: opacity 0.2s, box-shadow 0.2s;
+    }
+    .btn-submit:hover { opacity: 0.9; box-shadow: 0 0 40px rgba(74,158,255,0.5); }
+    .btn-submit:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
+
+    /* Success */
+    .success-card {
+      display: none;
+      text-align: center;
+      background: linear-gradient(135deg, #07121f, #0c1d38);
+      border: 1px solid rgba(74,158,255,0.35);
+      border-radius: 20px;
+      max-width: 760px;
+      margin: 0 auto 48px;
+      padding: 56px 40px;
+    }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a3aff, #4a9eff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 0 30px rgba(74,158,255,0.4);
+    }
+    .success-card h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .success-card p {
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+
+    footer {
+      background: #000;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 20px;
+      text-align: center;
+    }
+    footer img { width: 120px; opacity: 0.4; margin-bottom: 14px; display: block; margin-left: auto; margin-right: auto; mix-blend-mode: screen; }
+    .footer-disc { font-size: 0.68rem; color: rgba(255,255,255,0.3); max-width: 600px; margin: 0 auto; line-height: 1.65; }
+
+    @media (max-width: 600px) {
+      .card { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="page">
+
+  <header>
+    <a class="logo-wrap" href="/">
+      <img src="logo.png" alt="Rewire Elite Performance">
+    </a>
+  </header>
+
+  <section class="hero" style="padding: 24px 24px 32px;">
+    <p class="hero-label">📄 Expectations Document</p>
+    <h1>The Rewire Elite Commitment</h1>
+    <p class="hero-sub">Before we work together, we need to make sure we are aligned. This is not a program for people who are looking for shortcuts. Read every commitment below, check the ones you agree to, sign your name, and lock yourself in.</p>
+    <p class="hero-sub" style="margin-top: 8px;">We want to build winners. This is what that requires.</p>
+    <p class="hero-attr" style="margin-top: 16px;">— Ryan Edison, Rewire Elite Performance</p>
+  </section>
+
+  <div style="max-width:760px; margin: 0 auto 32px; padding: 0 24px;">
+    <p style="font-size:0.8rem; font-weight:700; color:rgba(255,255,255,0.4); text-align:center;">Check every commitment you agree to, then sign below.</p>
+  </div>
+
+  <!-- Main commitment card -->
+  <div class="card" style="margin: 0 24px 48px; max-width: 760px; margin-left: auto; margin-right: auto;">
+
+    <!-- Progress counter -->
+    <div class="counter-wrap">
+      <span class="counter-label">Commitments</span>
+      <div class="counter-bar-track">
+        <div class="counter-bar-fill" id="counterBar"></div>
+      </div>
+      <span class="counter-val"><span id="checkedCount">0</span> of 11</span>
+    </div>
+
+    <!-- Commitments list -->
+    <div class="commitments" id="commitmentsList">
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I understand that what I am committing to is not easy. Building a remote sales career takes real work, and I am prepared to put in the effort required.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I acknowledge there will be moments where I feel overwhelmed or stuck. I commit to pushing through those moments instead of quitting.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I will complete the training material in a timely manner. I will not let it sit untouched while expecting results.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I will prioritize applying to roles and showing up to interviews. Getting placed requires me to take action — the team can open the door, but I have to walk through it.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I will not request a refund because the work is harder than I expected. I understand that difficulty is part of the process and is not grounds for a refund.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I understand that success in remote sales takes time. I will not expect to be making $10K/month in week one. I commit to a realistic timeline and will trust the process.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I will show up to live coaching sessions and participate actively. I will not be a ghost. The people who engage are the people who get placed.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I will engage with the community — ask questions, share wins, support other members. I understand that the environment around me affects my results.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I understand that if I chose a payment plan, I am obligated to complete all payments regardless of whether I have landed a role yet. Enrollment is a binding financial commitment.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I will manage my time to make this work. A job, a family, or a busy schedule is not an excuse to not find at least a few hours a week to work toward my goals.</p>
+      </div>
+
+      <div class="commit-item" onclick="toggleCommit(this)">
+        <div class="commit-checkbox">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="commit-text">I understand that Rewire Elite Performance's placement team, coaching, and community are tools — and tools only work if I use them. My results are ultimately my responsibility.</p>
+      </div>
+
+    </div>
+
+    <!-- Form -->
+    <hr style="border:none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 28px;">
+
+    <div class="form-section">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Legal Name</label>
+          <input type="text" id="fullName" placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="emailAddr" placeholder="you@email.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Date Signed</label>
+        <input type="text" id="dateSigned" readonly>
+      </div>
+    </div>
+
+    <!-- Signature -->
+    <p class="sig-label">Digital Signature</p>
+    <div class="sig-wrap">
+      <canvas id="sigCanvas"></canvas>
+      <div class="sig-placeholder" id="sigPlaceholder">Sign here with your mouse or finger</div>
+    </div>
+    <button class="sig-clear" onclick="clearSignature()">Clear Signature</button>
+
+    <p class="witnessed" style="margin-top:20px;">Witnessed by: <span>Ryan Edison</span></p>
+
+    <button class="btn-submit" id="submitBtn" onclick="submitCommitment()">I'm in, Ryan. Lock me in →</button>
+
+  </div>
+
+  <!-- Success state -->
+  <div class="success-card" id="successCard">
+    <div class="success-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2>You're Locked In.</h2>
+    <p>Your commitment has been received. Now it's time to get to work. Everything you need is inside the program — use it.</p>
+  </div>
+
+  <footer>
+    <img src="logo.png" alt="Rewire Elite Performance">
+    <div class="footer-disc">
+      © 2025 Rewire Elite Performance. All Rights Reserved.<br>
+      Results are not typical and are not guaranteed. Individual outcomes depend on effort, commitment, and market conditions.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Set today's date
+  (function() {
+    var d = new Date();
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('dateSigned').value = months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+  })();
+
+  var totalCommitments = 11;
+
+  function toggleCommit(el) {
+    el.classList.toggle('checked');
+    updateCounter();
+  }
+
+  function updateCounter() {
+    var checked = document.querySelectorAll('.commit-item.checked').length;
+    document.getElementById('checkedCount').textContent = checked;
+    document.getElementById('counterBar').style.width = (checked / totalCommitments * 100) + '%';
+  }
+
+  // Signature canvas
+  var canvas = document.getElementById('sigCanvas');
+  var ctx = canvas.getContext('2d');
+  var drawing = false;
+  var hasSig = false;
+
+  function resizeCanvas() {
+    var rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = 130;
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 2.5;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  function getPos(e) {
+    var rect = canvas.getBoundingClientRect();
+    var scaleX = canvas.width / rect.width;
+    var scaleY = canvas.height / rect.height;
+    if (e.touches) {
+      return { x: (e.touches[0].clientX - rect.left) * scaleX, y: (e.touches[0].clientY - rect.top) * scaleY };
+    }
+    return { x: (e.clientX - rect.left) * scaleX, y: (e.clientY - rect.top) * scaleY };
+  }
+
+  canvas.addEventListener('mousedown', function(e) { drawing = true; var p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); });
+  canvas.addEventListener('mousemove', function(e) { if (!drawing) return; var p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); hasSig = true; document.getElementById('sigPlaceholder').style.display = 'none'; });
+  canvas.addEventListener('mouseup', function() { drawing = false; });
+  canvas.addEventListener('mouseleave', function() { drawing = false; });
+
+  canvas.addEventListener('touchstart', function(e) { e.preventDefault(); drawing = true; var p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); }, { passive: false });
+  canvas.addEventListener('touchmove', function(e) { e.preventDefault(); if (!drawing) return; var p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); hasSig = true; document.getElementById('sigPlaceholder').style.display = 'none'; }, { passive: false });
+  canvas.addEventListener('touchend', function() { drawing = false; });
+
+  function clearSignature() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hasSig = false;
+    document.getElementById('sigPlaceholder').style.display = 'flex';
+  }
+
+  function submitCommitment() {
+    var name = document.getElementById('fullName').value.trim();
+    var email = document.getElementById('emailAddr').value.trim();
+    var checked = document.querySelectorAll('.commit-item.checked').length;
+
+    if (checked < totalCommitments) {
+      alert('Please check all ' + totalCommitments + ' commitments before signing.');
+      return;
+    }
+    if (!name) { alert('Please enter your full legal name.'); return; }
+    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+    if (!hasSig) { alert('Please add your digital signature.'); return; }
+
+    document.querySelector('.card').style.display = 'none';
+    document.getElementById('successCard').style.display = 'block';
+    document.getElementById('successCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+</script>
+
+</body>
+</html>
